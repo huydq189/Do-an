@@ -1,0 +1,1 @@
+SQLCMD -S DESKTOP-OOT7VPD -E -i script.sql
