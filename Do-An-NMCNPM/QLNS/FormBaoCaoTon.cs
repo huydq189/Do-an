@@ -20,7 +20,7 @@ namespace QLNS
         private void FormBaoCaoTon_Load(object sender, EventArgs e)
         {
             DateTime thang = DateTime.Now;
-            lbThang1.Text = thang.ToString("MM");
+            //lbThang1.Text = thang.ToString("MM");
 
         }
     }
