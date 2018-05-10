@@ -12,9 +12,9 @@ namespace BUS
     public class CTHD_BUS
     {
         CTHD_DAL cthd = new CTHD_DAL();
-        public void LuuCT(CTHD_DTO ct)
+        public bool LuuCT(CTHD_DTO ct)
         {
-            cthd.LuuHoaDon(ct);
+            return cthd.LuuHoaDon(ct);
         }
 
         public DataTable LayTTHang(string dk)
@@ -26,9 +26,9 @@ namespace BUS
             return cthd.LaySoLuongSach(MaSach);
         }
 
-        public void UpdateSoLuongSach(string MaSach, string SoLuong)
+        public bool UpdateSoLuongSach(string MaSach, string SoLuong)
         {
-            cthd.UpdateSoLuongSach(MaSach, SoLuong);
+            return cthd.UpdateSoLuongSach(MaSach, SoLuong);
         }
     }
 }

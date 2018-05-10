@@ -54,54 +54,88 @@ namespace QLNS
 
         HoaDon_DTO HD = new HoaDon_DTO();
         CTHD_DTO CTHD = new CTHD_DTO();
+        double NoToiDa;
+        int SoLuongTonMin;
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
+            textBox1.Text = TTTaiKhoan.MaNV;
             DateTime Time = DateTime.Now;
             txbDT.Text = Time.ToString("dd/MM/yyyy");
-            Column1.DataSource = busCT.LayTTHang("");
+            try
+            {
+                Column1.DataSource = busCT.LayTTHang("");
+            }
+            catch
+            {
+                MessageBox.Show("Lấy thông tin hàng không thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             Column1.ValueMember = "MaSach"; // giá trị của column 1 trong dtgr là mã sách
             Column1.DisplayMember = "MaSach"; //hiển thị ra ngoài cũng là mã sách
             textBox11.Text = "0";
-            try  // lấy mã hd của hd này! gán vào txb mã hd bằng cách lấy mã hd lớn nhất trong db + 1 vì mã hd hay mã kh, mã pt, pn .... T đều cho tự tăng,
-            {//                                                                                                                          có giá trị ban đầu là 1
-                textBox2.Text = busHD.LayMaHD(); //                                                     và mỗi lần thêm mới vô thì tăng 1 đơn vị!
-            }    
-            catch(Exception ex)
+            try
             {
-                MessageBox.Show(ex.ToString());
+                SoLuongTonMin = int.Parse(busHD.LaySoLuong());
+                NoToiDa = double.Parse(busHD.LayNoToiDa());
+            }
+            catch
+            {
+                MessageBox.Show("Lấy quy định không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try  // lấy mã hd của hd này! gán vào txb mã hd bằng cách lấy mã hd lớn nhất trong db + 1 
+            {
+                textBox2.Text = busHD.LayMaHD();
+            }    
+            catch
+            {
+                MessageBox.Show("Lấy mã hóa đơn không thành công! ","Thông báo! ", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //dong = e.RowIndex;  code này chỉ lấy dc index của dòng mà mình click vào thôi, còn chuyển dòng bằng phím tab thì nó ko bắt dc nên bỏ
+           //int dong1 = e.RowIndex;  
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
-            {
                 if (dataGridView1.RowCount>1) // số dòng lớn hơn 1 thì bắt đầu tính!
                 {
                     int dong = dataGridView1.CurrentCell.RowIndex; //lấy index của dòng đang được chọn!
-                    try
-                    {
-                        if (dataGridView1.Rows[dong].Cells[4].Value != null) //kiểm thành tiền có null hay ko, nếu null sẽ bị lỗi khi truy cập vào hàm ToString()
+
+                        if (dataGridView1.Rows[dong].Cells[4].Value != null) //kiểm thành tiền có null hay ko
                         {
                             double a = double.Parse(dataGridView1.Rows[dong].Cells[4].Value.ToString()); // lấy giá trị thành tiền!
                             textBox11.Text = (double.Parse(textBox11.Text) + a).ToString();// tính tổng tiền của hóa đơn
 
                         }
-                    }
-                    catch (Exception ex)
+
+
+
+                if (dataGridView1.Rows[dong].Cells[0].Value != null && dataGridView1.Rows[dong].Cells[2].Value != null) // nếu có mã sách vs số lượng rồi thì mới tính thành tiền của sách
+                {
+                    if (dataGridView1.Rows[dong].Cells[1].Value != null && dataGridView1.Rows[dong].Cells[3].Value != null)
                     {
-                        MessageBox.Show(ex.ToString());
+                        string MaSach = dataGridView1.Rows[dong].Cells[0].Value.ToString();
+                        string SoLuong = dataGridView1.Rows[dong].Cells[2].Value.ToString();
+                        int SoSachCon = int.Parse(busCT.LaySoLuongSach(MaSach));
+                        string SoLuongMoi = (SoSachCon - int.Parse(SoLuong)).ToString();
+                        if (int.Parse(SoLuongMoi) >= SoLuongTonMin)
+                            dataGridView1.Rows[dong].Cells[4].Value = double.Parse(dataGridView1.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dataGridView1.Rows[dong].Cells[3].Value.ToString()) * 1.05;//tính thành tiền
+                        else
+                        {
+                            MessageBox.Show("Số lượng sách sau khi bán còn ít hơn " + SoLuongTonMin + ", số lượng sách còn: " + SoSachCon + "", "Thông báo");
+                            return;
+                        }
                     }
+                }
                     try
                     {
-                        if (dataGridView1.Rows[dong].Cells[0].Value != null) //nếu có mã sách thì mới lấy ra tên sách vs số lượng
+                        if (dataGridView1.Rows[dong].Cells[0].Value != null) //nếu có mã sách thì mới lấy ra tên sách vs don gia
                         {
                             DataTable dt1 = new DataTable();
                             dt1 = busCT.LayTTHang("WHERE MaSach = '" + int.Parse(dataGridView1.Rows[dong].Cells[0].Value.ToString()) + " '");//lấy thông tin sách
@@ -109,28 +143,13 @@ namespace QLNS
                             dataGridView1.Rows[dong].Cells[3].Value = double.Parse(dt1.Rows[0]["DonGia"].ToString());
                         }
                     }
-                    catch(Exception ex)
+                    catch
                     {
-                        MessageBox.Show(ex.ToString());
-                    }
-                    try
-                    {
-                        if (dataGridView1.Rows[dong].Cells[0].Value != null && dataGridView1.Rows[dong].Cells[2].Value != null) // nếu có mã sách vs số lượng rồi thì mới tính thành tiền của sách
-                        {
-                            dataGridView1.Rows[dong].Cells[4].Value = double.Parse(dataGridView1.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dataGridView1.Rows[dong].Cells[3].Value.ToString()) * 1.05;//tính thành tiền
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show("Lấy thông tin sách không thành công!", "Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
+
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
 
 
         }
@@ -149,7 +168,7 @@ namespace QLNS
             }
             catch
             {
-                MessageBox.Show("đm không dc xóa dòng này >_<!", "Thông cmn báo",MessageBoxButtons.OK,MessageBoxIcon.Warning); // xóa nhầm dòng mới
+                MessageBox.Show("Không thể xóa dòng!", "Thông báo!",MessageBoxButtons.OK,MessageBoxIcon.Error); // xóa nhầm dòng mới
             }
         }
 
@@ -170,9 +189,9 @@ namespace QLNS
             {
                 textBox2.Text = busHD.LayMaHD();// load lại mã hd
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Lấy mã hóa đơn không thành công!", "Thông báo! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -189,7 +208,7 @@ namespace QLNS
                 }
                 catch
                 {
-                    MessageBox.Show("Nhập số thôi m ! -_-! ");
+                    MessageBox.Show("Vui lòng nhập số! ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
         }
@@ -197,16 +216,39 @@ namespace QLNS
         private void button4_Click(object sender, EventArgs e) // btn lưu hd
         {
             if (textBox4.Text != "") // kiểm tra xem có mã khách hàng hay ko?
-                HD.MaKH = textBox4.Text; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!) 
+            {
+                HD.MaKH = textBox4.Text; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!)
+                double TienNo=0;
+                try
+                {
+                    TienNo = double.Parse(busHD.LayTienNoKH(HD.MaKH));
+                }
+                catch
+                {
+                    MessageBox.Show("Lấy tiền nợ không thành công!");
+                    return;
+                }
+                    if (TienNo > NoToiDa)
+                    {
+                        MessageBox.Show("Số tiền nợ tối đa là " + NoToiDa + ", khách hàng đang nợ " + TienNo + "", "Lỗi! ", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                        return;
+                    }
+            }
             else
                 HD.MaKH = "1"; //không có mã kh thì lưu vô 1 kh dc tạo sẵn trong db, kh này t tạo có mã kh là 1 
-            HD.MaNV = "1"; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
+            HD.MaNV = textBox1.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
             HD.NgHD = txbDT.Text;
             HD.TriGia = textBox11.Text;
-            try { busHD.LuuHoaDon(HD); }
-            catch(Exception ex) { MessageBox.Show(ex.ToString()); }
-            try
+            if (busHD.LuuHoaDon(HD))
             {
+                MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Lưu hóa đơn không thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+                
                 for(int i =0; i < dataGridView1.RowCount - 1; i++) //lưu CTHD và lưu số lượng mới của sách
                 {
                     string MaSach = dataGridView1.Rows[i].Cells[0].Value.ToString();
@@ -215,22 +257,24 @@ namespace QLNS
                     CTHD.MaSach = MaSach;
                     CTHD.SoLuong = SoLuong;
                     CTHD.MaHD = textBox2.Text;
-                    busCT.LuuCT(CTHD);
-                    busCT.UpdateSoLuongSach(MaSach, SoLuongMoi); //update số lượng mới!
+                    if (!busCT.LuuCT(CTHD))
+                    {
+                        MessageBox.Show("Lỗi kh lưu CTHD!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                    if(!busCT.UpdateSoLuongSach(MaSach, SoLuongMoi)); //update số lượng mới!
+                    {
+                        MessageBox.Show("Không update được số lượng sách!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
                 }
                 MessageBox.Show("Thanh toán thành công!");
-                button5_Click(sender, e);
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+                button5_Click(sender, e);//Load hóa đơn mới!
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-           // FormHoaDon // chưa biết làm :V
+            this.Close();
         }
     }
 }

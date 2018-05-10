@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account_DAL.cs" />
     <Compile Include="CTHD_DAL.cs" />
     <Compile Include="HoaDon_DAL.cs" />
     <Compile Include="KetNoiDB.cs" />
+    <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

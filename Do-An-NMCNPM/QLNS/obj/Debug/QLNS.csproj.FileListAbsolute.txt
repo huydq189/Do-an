@@ -16,7 +16,6 @@ C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormB
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe.config
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
@@ -39,3 +38,5 @@ C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\BUS.pdb
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DAL.pdb
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.pdb
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CopyComplete
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormLogin.resources

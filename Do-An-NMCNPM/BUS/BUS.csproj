@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account_BUS.cs" />
     <Compile Include="CTHD_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

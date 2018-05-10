@@ -11,9 +11,9 @@ namespace DAL
     public class CTHD_DAL
     {
         KetNoiDB cn = new KetNoiDB();
-        public void LuuHoaDon(CTHD_DTO ct)
+        public bool LuuHoaDon(CTHD_DTO ct)
         {
-            cn.ExcuteNoneQuery("INSERT INTO CTHD (MaHD, MaSach, SoLuong) VALUES ('" + ct.MaHD + "','" + ct.MaSach + "','" + ct.SoLuong + "')");
+            return cn.ExcuteNoneQuery("INSERT INTO CTHD (MaHD, MaSach, SoLuong) VALUES ('" + ct.MaHD + "','" + ct.MaSach + "','" + ct.SoLuong + "')");
         }
         public DataTable LayTT(string dk)
         {
@@ -23,9 +23,9 @@ namespace DAL
         {
             return cn.GetValue("SELECT SoLuong FROM SACH WHERE MaSach = '" + MaSach + "'");
         }
-        public void UpdateSoLuongSach(string MaSach, string SoLuong)
+        public bool UpdateSoLuongSach(string MaSach, string SoLuong)
         {
-            cn.ExcuteNoneQuery("UPDATE SACH SET SoLuong = '" + SoLuong + "' WHERE MaSach = '" + MaSach + "' ");
+            return cn.ExcuteNoneQuery("UPDATE SACH SET SoLuong = '" + SoLuong + "' WHERE MaSach = '" + MaSach + "' ");
         }
     }
 }

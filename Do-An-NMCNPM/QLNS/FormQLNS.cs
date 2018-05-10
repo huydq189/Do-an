@@ -52,5 +52,15 @@ namespace QLNS
             FormBaoCaoCongNo bccn = new FormBaoCaoCongNo();
             bccn.ShowDialog();
         }
+
+        private void FormQLNS_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public static class TTTaiKhoan
+    {
+        public static string MaNV = null;
+        public static string ChucVu = null;
     }
 }

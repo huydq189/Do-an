@@ -12,19 +12,19 @@ namespace BUS
     public class HoaDon_BUS
     {
         HoaDon_DAL hd = new HoaDon_DAL();
-        public void LuuHoaDon(HoaDon_DTO dt)
+        public bool LuuHoaDon(HoaDon_DTO dt)
         {
-            hd.LuuHoaDon(dt);
+            return hd.LuuHoaDon(dt);
         }
 
-        public void SuaHD(HoaDon_DTO dt)
+        public bool SuaHD(HoaDon_DTO dt)
         {
-            hd.SuaHD(dt);
+            return hd.SuaHD(dt);
         }
 
-        public void XoaHD(HoaDon_DTO dt)
+        public bool XoaHD(HoaDon_DTO dt)
         {
-            hd.XoaHD(dt);
+            return hd.XoaHD(dt);
         }
 
         public DataTable LayDuLieu(string DK)
@@ -39,6 +39,23 @@ namespace BUS
                 return "1";
             }
             else return (int.Parse(a) + 1).ToString();
+        }
+        public string LaySoLuong()
+        {
+            return hd.LaySoLuong();
+        }
+        public string LayNoToiDa()
+        {
+            return hd.LayNoToiDa();
+        }
+        public string LayTienNoKH(string Makh)
+        {
+            string TN = hd.LayTienNoKH(Makh);
+            if (TN == null)
+            {
+                return "0";
+            }
+            else return TN;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DAL
             }
         }
 
-        public void ExcuteNoneQuery(string StrSQL)
+        public bool ExcuteNoneQuery(string StrSQL)
         {
             try
             {
@@ -40,8 +40,10 @@ namespace DAL
             }
             catch
             {
-
+                DongKetNoi();
+                return false;
             }
+            return true;
         }
 
         public DataTable GetTable(string StrSQL)

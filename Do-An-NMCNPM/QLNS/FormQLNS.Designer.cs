@@ -166,6 +166,7 @@
             this.Name = "FormQLNS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà sách";
+            this.Load += new System.EventHandler(this.FormQLNS_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
