@@ -40,3 +40,27 @@ C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.pdb
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
 C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormLogin.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe.config
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.pdb
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\BUS.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DAL.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\BUS.pdb
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DAL.pdb
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.pdb
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormLogin.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormQLNS.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormSach.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.GenerateResource.cache
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CopyComplete
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
