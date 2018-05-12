@@ -167,6 +167,7 @@
             this.radButton2.TabIndex = 6;
             this.radButton2.Text = "Tìm kiếm";
             this.radButton2.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
             // radRadioButton4
             // 
