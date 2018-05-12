@@ -215,66 +215,138 @@ namespace QLNS
 
         private void button4_Click(object sender, EventArgs e) // btn lưu hd
         {
+            double tiennomoi = 0;
             if (textBox4.Text != "") // kiểm tra xem có mã khách hàng hay ko?
             {
-                HD.MaKH = textBox4.Text; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!)
-                double TienNo=0;
-                try
+                if (busHD.KiemTraMaKH(textBox4.Text))
                 {
-                    TienNo = double.Parse(busHD.LayTienNoKH(HD.MaKH));
-                }
-                catch
-                {
-                    MessageBox.Show("Lấy tiền nợ không thành công!");
-                    return;
-                }
+                    HD.MaKH = textBox4.Text; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!)
+                    double TienNo = 0;
+                    try
+                    {
+                        TienNo = double.Parse(busHD.LayTienNoKH(HD.MaKH));
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Lấy tiền nợ không thành công!");
+                        return;
+                    }
                     if (TienNo > NoToiDa)
                     {
                         MessageBox.Show("Số tiền nợ tối đa là " + NoToiDa + ", khách hàng đang nợ " + TienNo + "", "Lỗi! ", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
                         return;
                     }
+                    if (double.Parse(textBox13.Text) < 0)
+                    {
+                        tiennomoi = TienNo + (-1) * double.Parse(textBox13.Text);
+                        double b = double.Parse(textBox11.Text) + double.Parse(textBox13.Text);
+                        if (tiennomoi <= NoToiDa)
+                        {
+                            HD.TriGia = b.ToString();
+                            HD.MaNV = textBox1.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
+                            HD.NgHD = txbDT.Text;
+                            if (!busHD.LuuHoaDon(HD))
+                            {
+                                MessageBox.Show("Lưu hóa đơn không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            else
+                            {
+                                busHD.UpdateTienNo(textBox4.Text, tiennomoi);
+                                MessageBox.Show("Luu hoa don thanh cong!");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số tiền nợ tối đa là " + NoToiDa + ", khách hàng đang nợ " + TienNo + "", "Lỗi! ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        HD.TriGia = textBox11.Text;
+                        HD.MaNV = textBox1.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
+                        HD.NgHD = txbDT.Text;
+                        if (!busHD.LuuHoaDon(HD))
+                        {
+                            MessageBox.Show("Lưu hóa đơn không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else MessageBox.Show("Luu hoa don thanh cong!");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Nhap sai mã khách hàng, vui lòng nhập lại!");
+                    return;
+                }
             }
-            else
+            else {
+                HD.TriGia = textBox11.Text;
+                if (double.Parse(textBox13.Text) < 0)
+                {
+                    MessageBox.Show("Khach hang chu dang ky thanh vien khong the mua thieu");
+                    return;
+                }
                 HD.MaKH = "1"; //không có mã kh thì lưu vô 1 kh dc tạo sẵn trong db, kh này t tạo có mã kh là 1 
-            HD.MaNV = textBox1.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
-            HD.NgHD = txbDT.Text;
-            HD.TriGia = textBox11.Text;
-            if (busHD.LuuHoaDon(HD))
-            {
-                MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK);
+                HD.MaNV = textBox1.Text; 
+                HD.NgHD = txbDT.Text;
+                if (!busHD.LuuHoaDon(HD))
+                {
+                    MessageBox.Show("Lưu hóa đơn không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox2.Text = busHD.LayMaHD();
+                    return;
+                }
+                else MessageBox.Show("Luu hoa don thanh cong!");
             }
-            else
-            {
-                MessageBox.Show("Lưu hóa đơn không thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return;
-            }
-                
-                for(int i =0; i < dataGridView1.RowCount - 1; i++) //lưu CTHD và lưu số lượng mới của sách
+
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++) //lưu CTHD và lưu số lượng mới của sách
                 {
                     string MaSach = dataGridView1.Rows[i].Cells[0].Value.ToString();
                     string SoLuong = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                    string SoLuongMoi = (int.Parse(busCT.LaySoLuongSach(MaSach))-int.Parse(SoLuong)).ToString();
+                    string SoLuongMoi = (int.Parse(busCT.LaySoLuongSach(MaSach)) - int.Parse(SoLuong)).ToString();
                     CTHD.MaSach = MaSach;
                     CTHD.SoLuong = SoLuong;
                     CTHD.MaHD = textBox2.Text;
                     if (!busCT.LuuCT(CTHD))
                     {
-                        MessageBox.Show("Lỗi kh lưu CTHD!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        return;
+                        MessageBox.Show("Lỗi khi lưu CTHD!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    busHD.UpdateHoaDonLoi(CTHD.MaHD);
+                    textBox2.Text = busHD.LayMaHD();
+                    return;
                     }
-                    if(!busCT.UpdateSoLuongSach(MaSach, SoLuongMoi)); //update số lượng mới!
+                    if (!busCT.UpdateSoLuongSach(MaSach, SoLuongMoi)) //update số lượng mới!
                     {
-                        MessageBox.Show("Không update được số lượng sách!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        return;
+                        MessageBox.Show("Không update được số lượng sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    busHD.UpdateHoaDonLoi(CTHD.MaHD);
+                    textBox2.Text = busHD.LayMaHD();
+                    return;
+                        
                     }
                 }
                 MessageBox.Show("Thanh toán thành công!");
-                button5_Click(sender, e);//Load hóa đơn mới!
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

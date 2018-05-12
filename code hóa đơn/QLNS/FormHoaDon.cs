@@ -231,5 +231,10 @@ namespace QLNS
         {
            // FormHoaDon // chưa biết làm :V
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
