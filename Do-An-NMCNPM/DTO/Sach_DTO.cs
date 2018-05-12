@@ -8,7 +8,7 @@ namespace DTO
 {
     public class Sach_DTO
     {
-        private string _MaSach;
+        private int _MaSach;
         private string _MaNXB;
         private string _TenSach;
         private string _TacGia;
@@ -16,7 +16,7 @@ namespace DTO
         private float _DonGia;
         private string _SoLuong;
 
-        public string MaSach { get => _MaSach; set => _MaSach = value; }
+        public int MaSach { get => _MaSach; set => _MaSach = value; }
         public string MaNXB { get => _MaNXB; set => _MaNXB = value; }
         public string TenSach { get => _TenSach; set => _TenSach = value; }
         public string TacGia { get => _TacGia; set => _TacGia = value; }

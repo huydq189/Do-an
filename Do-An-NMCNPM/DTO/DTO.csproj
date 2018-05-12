@@ -45,6 +45,7 @@
     <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="NhanVien_DTO.cs" />
+    <Compile Include="NXB_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach_DTO.cs" />
   </ItemGroup>

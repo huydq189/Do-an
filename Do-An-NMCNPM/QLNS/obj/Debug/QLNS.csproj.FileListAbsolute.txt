@@ -49,7 +49,6 @@ D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.dll
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\BUS.pdb
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DAL.pdb
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\DTO.pdb
-D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
@@ -64,3 +63,12 @@ D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.Themes.Office2007Black.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.Themes.Windows8.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.UI.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\TelerikCommon.dll
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.xml
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.UI.xml
+D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe.licenses

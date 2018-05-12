@@ -28,7 +28,7 @@ namespace QLNS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 Account_DTO dto = new Account_DTO();
                 Account_BUS bus_Account = new Account_BUS();
@@ -38,13 +38,13 @@ namespace QLNS
                 dto.MaNhanVien = TTTaiKhoan.MaNV;
                 if (TTTaiKhoan.MaNV!= null)
                 {
-                    TTTaiKhoan.ChucVu = bus_Account.LayChucVu(dto);
+                    TTTaiKhoan.ChucVu = bus_Account.LayChucVu(dto);*/
                     FormQLNS a = new FormQLNS();
                     this.Hide();
                     a.ShowDialog();
                     this.Show();
                     txbPassword.Text = "";
-                }
+                /*}
                 else
                 {
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,7 +53,7 @@ namespace QLNS
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -96,6 +96,11 @@ namespace QLNS
         private void label4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
