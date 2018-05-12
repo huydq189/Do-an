@@ -59,7 +59,9 @@ namespace DAL
             }
             catch
             {
+                DongKetNoi();
                 return null;
+
             }
         }
 

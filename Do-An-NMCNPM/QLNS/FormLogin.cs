@@ -52,8 +52,13 @@ namespace QLNS
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 MessageBox.Show(ex.Message);
             }*/
+=======
+                MessageBox.Show(ex.ToString());
+            }
+>>>>>>> fee372bd8daca9f5a95557424c3cc80657a8ddd5
         }
 
         private void button2_Click(object sender, EventArgs e)

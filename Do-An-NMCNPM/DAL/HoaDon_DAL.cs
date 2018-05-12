@@ -46,5 +46,19 @@ namespace DAL
         {
             return cn.GetValue("SELECT SoTienNo FROM KHACHHANG WHERE MaKH= '" + Makh + "'");
         }
+        public bool  KiemTraMaKH(string MaKH)
+        {
+            if (cn.GetTable("SELECT * FROM KHACHHANG WHERE MaKH='" + MaKH + "'") != null)
+                return true;
+            return false;
+        }
+        public bool UpdateTienNo(string MaKH, double TienNo)
+        {
+            return cn.ExcuteNoneQuery("UPDATE KHACHHANG SET SoTienNo= '" + TienNo + "' WHERE MaKH='" + MaKH + "'");
+        }
+        public bool UpdateHoaDonLoi(string MaHD)
+        {
+            return cn.ExcuteNoneQuery("UPDATE HOADON SET TriGia= '0' WHERE MAHD='" + MaHD + "' ");
+        }
     }
 }

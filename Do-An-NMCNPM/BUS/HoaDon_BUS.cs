@@ -57,5 +57,17 @@ namespace BUS
             }
             else return TN;
         }
+        public bool KiemTraMaKH(string MaKH)
+        {
+            return hd.KiemTraMaKH(MaKH);
+        }
+        public bool UpdateTienNo(string MaKH, double TienNo)
+        {
+            return hd.UpdateTienNo(MaKH,TienNo);
+        }
+        public bool UpdateHoaDonLoi(string MaHD)
+        {
+            return hd.UpdateHoaDonLoi(MaHD);
+        }
     }
 }
