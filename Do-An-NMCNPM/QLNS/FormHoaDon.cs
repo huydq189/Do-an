@@ -332,9 +332,6 @@ namespace QLNS
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
-<<<<<<< HEAD
-        }*/
-=======
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -351,6 +348,5 @@ namespace QLNS
         {
 
         }
->>>>>>> fee372bd8daca9f5a95557424c3cc80657a8ddd5
     }
 }

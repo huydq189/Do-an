@@ -72,3 +72,6 @@ D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\TelerikCommon.dll
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.xml
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.UI.xml
 D:\Source\Do an\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe.licenses
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe.licenses
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.xml
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\Telerik.WinControls.UI.xml
