@@ -19,7 +19,12 @@ namespace QLNS
 
         private void FormBaoCaoCongNo_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            
+=======
+            DateTime thang1 = DateTime.Now;
+            //lbThang2.Text = thang1.ToString("MM");
+>>>>>>> abed820cd2421b687f5ab971a9c99018f94d57ae
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_BUS.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_BUS.pdb
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_DAL.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_DTO.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_DAL.pdb
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\bin\Debug\HOADON_DTO.pdb
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\obj\Debug\HOADON_BUS.csprojResolveAssemblyReference.cache
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\obj\Debug\HOADON_BUS.csproj.CoreCompileInputs.cache
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\obj\Debug\HOADON_BUS.csproj.CopyComplete
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\obj\Debug\HOADON_BUS.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_BUS\obj\Debug\HOADON_BUS.pdb

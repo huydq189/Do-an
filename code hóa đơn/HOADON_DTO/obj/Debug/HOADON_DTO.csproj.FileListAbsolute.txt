@@ -1,0 +1,6 @@
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\bin\Debug\HOADON_DTO.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\bin\Debug\HOADON_DTO.pdb
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\obj\Debug\HOADON_DTO.csprojResolveAssemblyReference.cache
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\obj\Debug\HOADON_DTO.csproj.CoreCompileInputs.cache
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\obj\Debug\HOADON_DTO.dll
+C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\HOADON_DTO\obj\Debug\HOADON_DTO.pdb

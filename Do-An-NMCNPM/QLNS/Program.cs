@@ -16,7 +16,7 @@ namespace QLNS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormQLNS());
+            Application.Run(new FormLogin());
         }
     }
 }

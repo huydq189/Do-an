@@ -1,0 +1,6 @@
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\bin\Debug\DTO.dll
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\bin\Debug\DTO.pdb
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\obj\Debug\DTO.dll
+C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DTO\obj\Debug\DTO.pdb

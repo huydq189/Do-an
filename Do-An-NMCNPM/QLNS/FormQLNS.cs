@@ -52,5 +52,36 @@ namespace QLNS
             FormBaoCaoCongNo bccn = new FormBaoCaoCongNo();
             bccn.ShowDialog();
         }
+
+        private void FormQLNS_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frm = FormQLNS.ActiveForm;
+            foreach (Form f in frm.MdiChildren)
+            {
+                if (f.Name == "FormHoaDon")
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+
+
+            FormHoaDon frm1 = new FormHoaDon();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
+    }
+    public static class TTTaiKhoan
+    {
+        public static string MaNV = null;
+        public static string ChucVu = null;
     }
 }
