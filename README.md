@@ -3,7 +3,10 @@
 **Đồ án cuối kì môn nhập môn công nghệ phần mềm**
 
 _**MÔ TẢ**_:
->Đáp ứng nhu cầu tin học góp phần tạo điều kiệu quản lý nhà sách dễ dàng hơn.
+>Đáp ứng nhu cầu tin học góp phần tạo điều kiệu quản lý nhà sách dễ dàng hơn, nâng cao chất lượng phục vụ khách hàng và quản lý nhà sách, tiết kiệm thời gian và công sức.
+
+_**THÀNH VIÊN**_:
++ Đỗ Quốc Huy - 16520505
 
 _**CHỨC NĂNG CHÍNH**_: 
 + Lập hóa đơn, xem hóa đơn
@@ -22,5 +25,4 @@ _**CÔNG CỤ VÀ CÔNG NGHỆ SỬ DỤNG**_:
 _**MÔI TRƯỜNG CÀI ĐẶT**_:
 + Hệ điều hành Windows 10.
 
-_**THÔNG TIN SINH VIÊN**_:
-+ Đỗ Quốc Huy - 16520505
+
