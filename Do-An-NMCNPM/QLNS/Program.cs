@@ -22,7 +22,7 @@ namespace QLNS
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new Mainform());
+            Application.Run(new FormLogin());
         }
     }
 }

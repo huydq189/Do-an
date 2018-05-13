@@ -30,5 +30,15 @@ namespace QLNS
         {
 
         }
+
+        private void Mainform_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public static class TTTaiKhoan
+    {
+        public static string MaNV = null;
+        public static string ChucVu = null;
     }
 }

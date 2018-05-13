@@ -70,6 +70,10 @@
     <Compile Include="FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs" />
     <Compile Include="FormPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +121,7 @@
     <EmbeddedResource Include="FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx" />
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
