@@ -114,9 +114,6 @@
     <EmbeddedResource Include="BCTon.resx">
       <DependentUpon>BCTon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHoaDon.resx">
-      <DependentUpon>FormHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemNXB.resx">
       <DependentUpon>FormThemNXB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormXemHD.resx">
-      <DependentUpon>FormXemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
@@ -158,6 +152,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{27f696a1-5ae1-42b4-b99a-ad183ab3cf26}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{db5ef25f-11b1-40aa-9c7c-819a3b876856}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

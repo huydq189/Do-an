@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\bin\Debug\QLNS.exe.config
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormHoaDon.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormQLNS.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormSach.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.Properties.Resources.resources
-C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.csproj.GenerateResource.Cache
-=======
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
@@ -33,4 +21,3 @@ C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\bin\Debug\HOADON_DTO.pd
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.exe
 C:\Users\Anh\Documents\GitHub\Do-an\code hóa đơn\QLNS\obj\Debug\QLNS.pdb
->>>>>>> abed820cd2421b687f5ab971a9c99018f94d57ae
