@@ -1,0 +1,34 @@
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe.config
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.pdb
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.GenerateResource.Cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormQLNS.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormSach.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe.config
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.pdb
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormQLNS.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormSach.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+E:\Workspace\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.GenerateResource.Cache
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\BUS.dll
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\DAO.dll
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\BUS.pdb
+E:\Workspace\Do-An-NMCNPM\QLNS\bin\Debug\DAO.pdb

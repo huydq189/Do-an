@@ -1,0 +1,7 @@
+E:\Workspace\Do-An-NMCNPM\BUS\bin\Debug\BUS.dll
+E:\Workspace\Do-An-NMCNPM\BUS\bin\Debug\BUS.pdb
+E:\Workspace\Do-An-NMCNPM\BUS\bin\Debug\DAO.dll
+E:\Workspace\Do-An-NMCNPM\BUS\bin\Debug\DAO.pdb
+E:\Workspace\Do-An-NMCNPM\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\Workspace\Do-An-NMCNPM\BUS\obj\Debug\BUS.dll
+E:\Workspace\Do-An-NMCNPM\BUS\obj\Debug\BUS.pdb

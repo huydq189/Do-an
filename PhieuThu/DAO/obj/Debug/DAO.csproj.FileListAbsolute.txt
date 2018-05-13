@@ -1,0 +1,5 @@
+E:\Workspace\Do-An-NMCNPM\DAO\bin\Debug\DAO.dll
+E:\Workspace\Do-An-NMCNPM\DAO\bin\Debug\DAO.pdb
+E:\Workspace\Do-An-NMCNPM\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\Workspace\Do-An-NMCNPM\DAO\obj\Debug\DAO.dll
+E:\Workspace\Do-An-NMCNPM\DAO\obj\Debug\DAO.pdb
