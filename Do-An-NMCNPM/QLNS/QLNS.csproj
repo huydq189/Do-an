@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{889BC138-F2E7-423D-8FFD-04586440AC21}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59DD321D-C4C0-455B-924F-85C3E1980EFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLNS</RootNamespace>
     <AssemblyName>QLNS</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,15 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BUS">
-      <HintPath>..\BUS\bin\Debug\BUS.dll</HintPath>
-    </Reference>
-    <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
-    </Reference>
-    <Reference Include="DTO">
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v17.2" />
+    <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Utils.v17.2" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.2" />
+    <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,39 +50,25 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2018.1.220.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
-      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WinForms R1 2018\Bin40\Telerik.WinControls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2018.1.220.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2018.1.220.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2018.1.220.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2018.1.220.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBaoCaoCongNo.cs">
+    <Compile Include="BCNo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaoCaoCongNo.Designer.cs">
-      <DependentUpon>FormBaoCaoCongNo.cs</DependentUpon>
+    <Compile Include="BCNo.Designer.cs">
+      <DependentUpon>BCNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaoCaoTon.cs">
+    <Compile Include="BCTon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaoCaoTon.Designer.cs">
-      <DependentUpon>FormBaoCaoTon.cs</DependentUpon>
+    <Compile Include="BCTon.Designer.cs">
+      <DependentUpon>BCTon.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPhieuNhap.cs">
       <SubType>Form</SubType>
@@ -97,31 +82,40 @@
     <Compile Include="FormPhieuThu.Designer.cs">
       <DependentUpon>FormPhieuThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormQLNS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQLNS.Designer.cs">
-      <DependentUpon>FormQLNS.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSach.Designer.cs">
       <DependentUpon>FormSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemNXB.Designer.cs">
+      <DependentUpon>FormThemNXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemHD.Designer.cs">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainform.Designer.cs">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormBaoCaoCongNo.resx">
-      <DependentUpon>FormBaoCaoCongNo.cs</DependentUpon>
+    <EmbeddedResource Include="BCNo.resx">
+      <DependentUpon>BCNo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaoCaoTon.resx">
-      <DependentUpon>FormBaoCaoTon.cs</DependentUpon>
+    <EmbeddedResource Include="BCTon.resx">
+      <DependentUpon>BCTon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
@@ -129,11 +123,17 @@
     <EmbeddedResource Include="FormPhieuThu.resx">
       <DependentUpon>FormPhieuThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQLNS.resx">
-      <DependentUpon>FormQLNS.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSach.resx">
       <DependentUpon>FormSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNXB.resx">
+      <DependentUpon>FormThemNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemHD.resx">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainform.resx">
+      <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -144,6 +144,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,10 +157,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
