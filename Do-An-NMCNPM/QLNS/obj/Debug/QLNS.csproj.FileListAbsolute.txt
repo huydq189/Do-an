@@ -16,3 +16,15 @@ C:\Users\Windows 10 TIMT\Documents\GitHub\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormB
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe.config
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.exe
 C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.pdb
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoCongNo.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormBaoCaoTon.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormHoaDon.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormQLNS.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.FormSach.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\obj\Debug\QLNS.csproj.GenerateResource.Cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.exe
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Do-An-NMCNPM\QLNS\bin\Debug\QLNS.pdb

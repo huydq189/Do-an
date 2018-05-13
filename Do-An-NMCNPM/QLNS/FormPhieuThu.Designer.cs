@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNgaylap = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,8 +44,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTienThu = new System.Windows.Forms.TextBox();
+            this.txtNgayThu = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnBackPT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,7 +84,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtNgaylap);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(12, 87);
@@ -100,12 +100,13 @@
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // textBox4
+            // txtNgaylap
             // 
-            this.textBox4.Location = new System.Drawing.Point(93, 65);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 20);
-            this.textBox4.TabIndex = 0;
+            this.txtNgaylap.Enabled = false;
+            this.txtNgaylap.Location = new System.Drawing.Point(93, 65);
+            this.txtNgaylap.Name = "txtNgaylap";
+            this.txtNgaylap.Size = new System.Drawing.Size(191, 20);
+            this.txtNgaylap.TabIndex = 0;
             // 
             // label6
             // 
@@ -216,8 +217,8 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.txtTienThu);
+            this.panel3.Controls.Add(this.txtNgayThu);
             this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
@@ -229,19 +230,19 @@
             this.panel3.Size = new System.Drawing.Size(298, 203);
             this.panel3.TabIndex = 3;
             // 
-            // textBox7
+            // txtTienThu
             // 
-            this.textBox7.Location = new System.Drawing.Point(122, 124);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 20);
-            this.textBox7.TabIndex = 6;
+            this.txtTienThu.Location = new System.Drawing.Point(122, 124);
+            this.txtTienThu.Name = "txtTienThu";
+            this.txtTienThu.Size = new System.Drawing.Size(162, 20);
+            this.txtTienThu.TabIndex = 6;
             // 
-            // textBox6
+            // txtNgayThu
             // 
-            this.textBox6.Location = new System.Drawing.Point(122, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(162, 20);
-            this.textBox6.TabIndex = 5;
+            this.txtNgayThu.Location = new System.Drawing.Point(122, 73);
+            this.txtNgayThu.Name = "txtNgayThu";
+            this.txtNgayThu.Size = new System.Drawing.Size(162, 20);
+            this.txtNgayThu.TabIndex = 5;
             // 
             // textBox5
             // 
@@ -267,6 +268,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Nhập lại";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -383,21 +385,22 @@
             this.button5.Text = "In phiếu thu";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnBackPT
             // 
-            this.button6.Location = new System.Drawing.Point(712, 392);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 44);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Trở về";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnBackPT.Location = new System.Drawing.Point(712, 392);
+            this.btnBackPT.Name = "btnBackPT";
+            this.btnBackPT.Size = new System.Drawing.Size(75, 44);
+            this.btnBackPT.TabIndex = 10;
+            this.btnBackPT.Text = "Trở về";
+            this.btnBackPT.UseVisualStyleBackColor = true;
+            this.btnBackPT.Click += new System.EventHandler(this.btnBackPT_Click);
             // 
             // FormPhieuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 440);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnBackPT);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
@@ -411,6 +414,7 @@
             this.Name = "FormPhieuThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu thu";
+            this.Load += new System.EventHandler(this.FormPhieuThu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -451,15 +455,15 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNgaylap;
+        private System.Windows.Forms.TextBox txtTienThu;
+        private System.Windows.Forms.TextBox txtNgayThu;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnBackPT;
     }
 }
