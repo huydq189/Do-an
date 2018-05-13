@@ -114,6 +114,9 @@
     <EmbeddedResource Include="BCTon.resx">
       <DependentUpon>BCTon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemNXB.resx">
       <DependentUpon>FormThemNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemHD.resx">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
