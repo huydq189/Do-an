@@ -13,7 +13,7 @@ namespace DAL
         KetNoiDB cn = new KetNoiDB();
         public bool LuuHoaDon(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
+            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
         }
 
         public bool SuaHD(HoaDon_DTO hd)
@@ -46,12 +46,11 @@ namespace DAL
         {
             return cn.GetValue("SELECT SoTienNo FROM KHACHHANG WHERE MaKH= '" + Makh + "'");
         }
-        public bool  KiemTraMaKH(string MaKH)
+        public DataTable LayMaKH()
         {
-            if (cn.GetTable("SELECT * FROM KHACHHANG WHERE MaKH='" + MaKH + "'") != null)
-                return true;
-            return false;
+            return cn.GetTable("SELECT MaKH FROM KHACHHANG WHERE MaKH > 1");
         }
+
         public bool UpdateTienNo(string MaKH, double TienNo)
         {
             return cn.ExcuteNoneQuery("UPDATE KHACHHANG SET SoTienNo= '" + TienNo + "' WHERE MaKH='" + MaKH + "'");

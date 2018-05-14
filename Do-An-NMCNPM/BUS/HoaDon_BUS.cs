@@ -50,16 +50,11 @@ namespace BUS
         }
         public string LayTienNoKH(string Makh)
         {
-            string TN = hd.LayTienNoKH(Makh);
-            if (TN == null)
-            {
-                return "0";
-            }
-            else return TN;
+            return hd.LayTienNoKH(Makh);
         }
-        public bool KiemTraMaKH(string MaKH)
+        public DataTable LayMaKH()
         {
-            return hd.KiemTraMaKH(MaKH);
+            return hd.LayMaKH();
         }
         public bool UpdateTienNo(string MaKH, double TienNo)
         {
