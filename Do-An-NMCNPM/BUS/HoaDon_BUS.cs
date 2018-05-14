@@ -27,9 +27,9 @@ namespace BUS
             return hd.XoaHD(dt);
         }
 
-        public DataTable LayDuLieu(string DK)
+        public DataTable LayDuLieu()
         {
-            return hd.LayDuLieu(DK);
+            return hd.LayDuLieu();
         }
         public string LayMaHD()
         {

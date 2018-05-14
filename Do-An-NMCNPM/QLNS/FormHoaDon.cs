@@ -28,6 +28,7 @@ namespace QLNS
         int SoLuongTonMin;
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             DateTime Time = DateTime.Now;
             txbNgayLap.Text = Time.ToString("dd/MM/yyyy");
             txbMaNV.Text = TTTaiKhoan.MaNV;

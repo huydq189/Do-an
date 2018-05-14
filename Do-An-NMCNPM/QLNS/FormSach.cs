@@ -17,5 +17,10 @@ namespace QLNS
         {
             InitializeComponent();
         }
+
+        private void FormSach_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

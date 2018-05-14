@@ -13,7 +13,7 @@ namespace DAL
         KetNoiDB cn = new KetNoiDB();
         public bool LuuHoaDon(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
+            return cn.ExcuteNoneQuery("INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
         }
 
         public bool SuaHD(HoaDon_DTO hd)
@@ -26,9 +26,9 @@ namespace DAL
             return cn.ExcuteNoneQuery("DELETE FROM HOADON WHERE MaHD='" + hd.MaHD + "'");
         }
 
-        public DataTable LayDuLieu(string DK)
+        public DataTable LayDuLieu()
         {
-            return cn.GetTable("SELECT * FROM HOADON WHERE " + DK);
+            return cn.GetTable("SELECT * FROM HOADON");
         }
         public string LayMaHDMax()
         {
