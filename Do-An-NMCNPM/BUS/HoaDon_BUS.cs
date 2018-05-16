@@ -64,5 +64,14 @@ namespace BUS
         {
             return hd.UpdateHoaDonLoi(MaHD);
         }
+        public DataTable SearchMaKH(String MaKH)
+        {
+            return hd.SearchMaKH(MaKH);
+        }
+
+        public DataTable SearchDate(string a, string b)
+        {
+            return hd.SearchDate(a, b);
+        }
     }
 }

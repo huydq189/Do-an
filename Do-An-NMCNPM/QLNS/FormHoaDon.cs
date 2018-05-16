@@ -100,6 +100,14 @@ namespace QLNS
                             MessageBox.Show("Số lượng sách sau khi bán còn ít hơn " + SoLuongTonMin + ", số lượng sách còn: " + SoSachCon + "", "Thông báo");
                             return;
                         }
+                        for(int i = 0; i < dtgCTHD.RowCount - 1; i++)
+                        {
+                            if(MaSach == dtgCTHD.Rows[i].Cells[0].Value.ToString()&&(i!=dong))
+                            {
+                                MessageBox.Show("Mã sách không được giống nhau, vui lòn kiểm tra lại!");
+                                return;
+                            }
+                        }
                     }
 
                 }
@@ -162,78 +170,100 @@ namespace QLNS
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (cbKH.Checked) // kiểm tra xem có mã khách hàng hay ko?
-            { 
-                HD.MaKH = "1"; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!)
-                if (double.Parse(txbTienThua.Text) < 0)
-                {
-                    MessageBox.Show("Khách hàng chưa đăng ký thành viên không được mua thiếu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                HD.MaNV = txbMaNV.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
-                HD.NgHD = txbNgayLap.Text;
-                HD.TriGia = txbSoTienThu.Text;
-                if (!(busHD.LuuHoaDon(HD)))
-                    {
-                    MessageBox.Show("Lỗi khi lưu Hoadon!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-            else {
-                HD.MaKH = cbMaKH.Text; //không có mã kh thì lưu vô 1 kh dc tạo sẵn trong db, kh này t tạo có mã kh là 1 
-                if (double.Parse(txbTienThua.Text) < 0)
-                {
-                    double tienNoHienTai = double.Parse(busHD.LayTienNoKH(HD.MaKH));
-                    double NoMoi = tienNoHienTai + double.Parse(txbTienThua.Text) * (-1);
-                    if (NoMoi > NoToiDa)
-                    {
-                        MessageBox.Show("Không thể mua vì số tiền nợ tối đa là ("+NoToiDa+"), số tiền nợ của bạn là: "+tienNoHienTai+"", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else{
-                        if (!busHD.LuuHoaDon(HD)) { MessageBox.Show("Lỗi khi lưu hóa đơn!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
-                        if(!busHD.UpdateTienNo(HD.MaKH,NoMoi)) { MessageBox.Show("Update tiền nợ không thành công!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txbMaHD.Text = busHD.LayMaHD().ToString();
-                            return;
-                        }
-                    }
-                }
-                HD.MaNV = txbMaNV.Text; 
-                HD.NgHD = txbNgayLap.Text;
-                HD.TriGia = txbSoTienThu.Text;
-                if (!busHD.LuuHoaDon(HD)) { MessageBox.Show("Lỗi khi lưu hóa đơn!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txbMaHD.Text = busHD.LayMaHD().ToString();
-                }
-
-
-            }
-
+            HD.MaHD = txbMaHD.Text;
             try
             {
-                for (int i = 0; i < dtgCTHD.RowCount - 1; i++) //lưu CTHD và lưu số lượng mới của sách
+                if (cbKH.Checked) // kiểm tra xem có mã khách hàng hay ko?
                 {
-                    string MaSach = dtgCTHD.Rows[i].Cells[0].Value.ToString();
-                    string SoLuong = dtgCTHD.Rows[i].Cells[2].Value.ToString();
-                    string SoLuongMoi = (int.Parse(busCT.LaySoLuongSach(MaSach)) - int.Parse(SoLuong)).ToString();
-                    CTHD.MaSach = MaSach;
-                    CTHD.SoLuong = SoLuong;
-                    CTHD.MaHD = txbMaHD.Text;
-                    if (!busCT.LuuCT(CTHD))
+                    HD.MaKH = "1"; // có thì lưu mã kh(chưa lưu dc vì t chưa thêm khách hàng!)
+                    if (double.Parse(txbTienThua.Text) < 0)
                     {
-                        MessageBox.Show("Lỗi khi lưu cthd!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Khách hàng chưa đăng ký thành viên không được mua thiếu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (!busCT.UpdateSoLuongSach(MaSach, SoLuongMoi)) //update số lượng mới!
+                    HD.MaNV = txbMaNV.Text; // mã nhân viên vì chưa có chức năng login để lấy mã nv nên t tạo auto cho bằng 1
+                    HD.NgHD = txbNgayLap.Text;
+                    HD.TriGia = txbTongTien.Text;
+                    if (!(busHD.LuuHoaDon(HD)))
                     {
-                        MessageBox.Show("Lỗi khi update số lượng!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi khi lưu Hoadon!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
-                MessageBox.Show("Thanh toán thành công!","Success!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                else
+                {
+                    HD.MaKH = cbMaKH.Text; //không có mã kh thì lưu vô 1 kh dc tạo sẵn trong db, kh này t tạo có mã kh là 1 
+                    if (double.Parse(txbTienThua.Text) < 0)
+                    {
+                        double tienNoHienTai = double.Parse(busHD.LayTienNoKH(HD.MaKH));
+                        double NoMoi = tienNoHienTai + double.Parse(txbTienThua.Text) * (-1);
+                        if (NoMoi > NoToiDa)
+                        {
+                            MessageBox.Show("Không thể mua vì số tiền nợ tối đa là (" + NoToiDa + "), số tiền nợ của bạn là: " + tienNoHienTai + "", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            HD.MaNV = txbMaNV.Text;
+                            HD.NgHD = txbNgayLap.Text;
+                            HD.TriGia = (double.Parse(txbTongTien.Text) + double.Parse(txbTienThua.Text)).ToString();
+                            if (!busHD.LuuHoaDon(HD)) { MessageBox.Show("Lỗi khi lưu hóa đơn!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                            if (!busHD.UpdateTienNo(HD.MaKH, NoMoi))
+                            {
+                                MessageBox.Show("Update tiền nợ không thành công!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txbMaHD.Text = busHD.LayMaHD().ToString();
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        HD.MaNV = txbMaNV.Text;
+                        HD.NgHD = txbNgayLap.Text;
+                        HD.TriGia = txbTongTien.Text;
+                        if (!busHD.LuuHoaDon(HD))
+                        {
+                            MessageBox.Show("Lỗi khi lưu hóa đơn!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txbMaHD.Text = busHD.LayMaHD().ToString();
+                        }
+                    }
 
+
+                }
+
+                try
+                {
+                    for (int i = 0; i < dtgCTHD.RowCount - 1; i++) //lưu CTHD và lưu số lượng mới của sách
+                    {
+                        string MaSach = dtgCTHD.Rows[i].Cells[0].Value.ToString();
+                        string SoLuong = dtgCTHD.Rows[i].Cells[2].Value.ToString();
+                        string SoLuongMoi = (int.Parse(busCT.LaySoLuongSach(MaSach)) - int.Parse(SoLuong)).ToString();
+                        CTHD.MaSach = MaSach;
+                        CTHD.SoLuong = SoLuong;
+                        CTHD.MaHD = txbMaHD.Text;
+                        if (!busCT.LuuCT(CTHD))
+                        {
+                            MessageBox.Show("Lỗi khi lưu cthd!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        if (!busCT.UpdateSoLuongSach(MaSach, SoLuongMoi)) //update số lượng mới!
+                        {
+                            MessageBox.Show("Lỗi khi update số lượng!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    MessageBox.Show("Thanh toán thành công!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txbMaHD.Text = busHD.LayMaHD();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Lỗi khi lưu CTHD", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txbMaHD.Text = busHD.LayMaHD();
+                }
             }
             catch
             {
-                MessageBox.Show("Lỗi khi lưu CTHD", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi lưu hóa đơn");
             }
         }
 
@@ -258,11 +288,8 @@ namespace QLNS
             if (cbKH.Checked)
             {
                 cbMaKH.Enabled = false;
-                cbMaKH.Text = "";
+                cbMaKH.Text = "2";
             }
-            else {
-                cbMaKH.Enabled = true; }
-            cbMaKH.Text = "1";
         }
     }
 }

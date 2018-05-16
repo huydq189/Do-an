@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -116,6 +116,7 @@
             // 
             // cbMaKH
             // 
+            this.cbMaKH.Enabled = false;
             this.cbMaKH.FormattingEnabled = true;
             this.cbMaKH.Location = new System.Drawing.Point(593, 79);
             this.cbMaKH.Name = "cbMaKH";
@@ -133,6 +134,8 @@
             // cbKH
             // 
             this.cbKH.AutoSize = true;
+            this.cbKH.Checked = true;
+            this.cbKH.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbKH.Location = new System.Drawing.Point(732, 81);
             this.cbKH.Name = "cbKH";
             this.cbKH.Size = new System.Drawing.Size(146, 17);
@@ -316,9 +319,9 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column4.HeaderText = "Đơn giá";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -328,9 +331,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column5.HeaderText = "Thành tiền";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;

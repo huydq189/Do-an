@@ -143,6 +143,26 @@ namespace QLNS
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "frmKhachHang")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+
+            frmKhachHang frm1 = new frmKhachHang();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
