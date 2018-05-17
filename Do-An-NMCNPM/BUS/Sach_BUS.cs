@@ -12,39 +12,40 @@ namespace BUS
     public class Sach_BUS
     {
         //LoadDSSach
-        public static DataTable LoadDSSach()
+        Sach_DAL dal = new Sach_DAL();
+        public DataTable LoadDSSach()
         {
-            return Sach_DAL.LoadDSTatCaSach();
+            return dal.LoadDSTatCaSach();
         }
         //Themsach
         public static void ThemSach(Sach_DTO sach)
         {
-            Sach_DAL.ThemSach(sach);
+           // Sach_DAL.ThemSach(sach);
         }
         //Xoa sach
         public static void XoaSach(int MaSach)
         {
-            Sach_DAL.XoaSach(MaSach);
+            //Sach_DAL.XoaSach(MaSach);
         }
         //Timtheotheloai
         public static void Timtheloai(string TheLoai)
         {
-            Sach_DAL.Timtheotheloai(TheLoai);
+            //Sach_DAL.Timtheotheloai(TheLoai);
         }
         //Tim theo tac gia
         public static void Timtacgia(string TacGia)
         {
-            Sach_DAL.Timtheotacgia(TacGia); 
+            //Sach_DAL.Timtheotacgia(TacGia); 
         }
         //Timtheomasach
         public static void Timmasach(int MaSach)
         {
-            Sach_DAL.Timtheomasach(MaSach);
+           // Sach_DAL.Timtheomasach(MaSach);
         }
         //TimtheoTensach
         public static void Timtheotensach(string TenSach)
         {
-            Sach_DAL.TimTheotensach(TenSach);
+          //Sach_DAL.//TimTheotensach(TenSach);
         }
     }
 }

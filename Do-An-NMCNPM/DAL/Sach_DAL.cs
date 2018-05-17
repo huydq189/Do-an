@@ -9,29 +9,16 @@ using DTO;
 
 namespace DAL
 {
-    public class sqlConnectionData
-    {
-        public static SqlConnection Hamketnoi()
-        {
-            SqlConnection cnn = new SqlConnection("Sever=.;Database=QLNS;Trusted_Connection=True");
-            return cnn;
-        }
-    }
-
     public class Sach_DAL
     {
+        KetNoiDB cn = new KetNoiDB();
         //Load danh sach tat ca sach
-        public static DataTable LoadDSTatCaSach()
+        public DataTable LoadDSTatCaSach()
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_LOADSACH", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
+            return cn.GetTable("SELECT * FROM SACH");
         }
-        //Them sach
+
+        /*Them sach
         public static void ThemSach(Sach_DTO sach)
         {
             SqlConnection cnn = sqlConnectionData.Hamketnoi();
@@ -115,6 +102,6 @@ namespace DAL
             DataTable dtb = new DataTable();
             da.Fill(dtb);
             return dtb;
-        }
+        }*/
     }
 }

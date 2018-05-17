@@ -72,9 +72,11 @@
             this.simpleButton5.Size = new System.Drawing.Size(101, 37);
             this.simpleButton5.TabIndex = 7;
             this.simpleButton5.Text = "Xem tất cả";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 54);
             this.dataGridView1.Name = "dataGridView1";
