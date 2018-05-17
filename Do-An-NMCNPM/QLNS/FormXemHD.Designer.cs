@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXemHD));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMaKH = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonSearch = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dtgHoaDon = new System.Windows.Forms.DataGridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -53,14 +53,14 @@
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.label3);
-            this.panelControl1.Controls.Add(this.comboBox1);
+            this.panelControl1.Controls.Add(this.cbMaKH);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Controls.Add(this.dateTimePicker2);
             this.panelControl1.Controls.Add(this.dateTimePicker1);
             this.panelControl1.Controls.Add(this.label2);
-            this.panelControl1.Controls.Add(this.radioButton3);
+            this.panelControl1.Controls.Add(this.radioButtonSearch);
             this.panelControl1.Controls.Add(this.radioButton1);
-            this.panelControl1.Controls.Add(this.simpleButton4);
+            this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
@@ -77,13 +77,13 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "Khách hàng";
             // 
-            // comboBox1
+            // cbMaKH
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 178);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbMaKH.FormattingEnabled = true;
+            this.cbMaKH.Location = new System.Drawing.Point(85, 178);
+            this.cbMaKH.Name = "cbMaKH";
+            this.cbMaKH.Size = new System.Drawing.Size(195, 21);
+            this.cbMaKH.TabIndex = 7;
             // 
             // label1
             // 
@@ -122,16 +122,16 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Đến ngày";
             // 
-            // radioButton3
+            // radioButtonSearch
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(28, 155);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(124, 17);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Tìm theo khách hàng";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonSearch.AutoSize = true;
+            this.radioButtonSearch.Location = new System.Drawing.Point(28, 155);
+            this.radioButtonSearch.Name = "radioButtonSearch";
+            this.radioButtonSearch.Size = new System.Drawing.Size(124, 17);
+            this.radioButtonSearch.TabIndex = 7;
+            this.radioButtonSearch.TabStop = true;
+            this.radioButtonSearch.Text = "Tìm theo khách hàng";
+            this.radioButtonSearch.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
@@ -144,14 +144,15 @@
             this.radioButton1.Text = "Tìm theo ngày lập";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // simpleButton4
+            // btnSearch
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(183, 217);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(97, 50);
-            this.simpleButton4.TabIndex = 5;
-            this.simpleButton4.Text = "Tìm kiếm";
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(183, 217);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 50);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // labelControl2
             // 
@@ -165,6 +166,7 @@
             // 
             // dtgHoaDon
             // 
+            this.dtgHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHoaDon.Location = new System.Drawing.Point(10, 5);
             this.dtgHoaDon.Name = "dtgHoaDon";
@@ -189,6 +191,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(101, 37);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Xem tất cả";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // FormXemHD
             // 
@@ -213,15 +216,15 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButtonSearch;
         private System.Windows.Forms.RadioButton radioButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.DataGridView dtgHoaDon;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMaKH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;

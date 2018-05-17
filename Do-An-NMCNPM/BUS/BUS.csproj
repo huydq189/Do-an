@@ -49,6 +49,7 @@
     <Compile Include="Account_BUS.cs" />
     <Compile Include="CTHD_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach_BUS.cs" />
   </ItemGroup>

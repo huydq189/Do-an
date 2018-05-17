@@ -69,13 +69,13 @@ namespace DAL
         {
 
             string temp = null;
-            MoKetNoi();
-            SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
-            SqlDataReader sqldr = sqlcmd.ExecuteReader();
-            while (sqldr.Read())
-                temp = sqldr[0].ToString();
-            DongKetNoi();
-            return temp;
+                MoKetNoi();
+                SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
+                SqlDataReader sqldr = sqlcmd.ExecuteReader();
+                while (sqldr.Read())
+                    temp = sqldr[0].ToString();
+                DongKetNoi();
+                return temp;
         }
 
     }

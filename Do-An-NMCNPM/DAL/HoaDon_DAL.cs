@@ -13,7 +13,7 @@ namespace DAL
         KetNoiDB cn = new KetNoiDB();
         public bool LuuHoaDon(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
+            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaHD,MaKH, MaNV, NgHD, TriGia) VALUES('"+hd.MaHD+"','" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
         }
 
         public bool SuaHD(HoaDon_DTO hd)
@@ -58,6 +58,17 @@ namespace DAL
         public bool UpdateHoaDonLoi(string MaHD)
         {
             return cn.ExcuteNoneQuery("UPDATE HOADON SET TriGia= '0' WHERE MAHD='" + MaHD + "' ");
+        }
+        public DataTable SearchMaKH(String MaKH)
+        {
+            return cn.GetTable("SELECT * FROM HOADON WHERE MaKH='" + MaKH + "'");
+        }
+        public DataTable SearchDate(string a, string b)
+        {
+            string  sql = @"set dateformat dmy";
+                    sql+=      @" SELECT* FROM HOADON";
+                    sql += @" WHERE NgHD BETWEEN '" + a + "' AND '" + b + "'";
+            return cn.GetTable(sql);
         }
     }
 }

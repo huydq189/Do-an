@@ -28,6 +28,36 @@ namespace QLNS
             try { hd = busHD.LayDuLieu(); }
             catch { MessageBox.Show("Lỗi khi lấy danh sách hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             dtgHoaDon.DataSource = hd;
+            try
+            {
+                cbMaKH.DataSource = busHD.LayMaKH();
+                cbMaKH.ValueMember = "MaKH";
+                cbMaKH.DisplayMember = "MaKH";
+            }
+            catch
+            {
+                MessageBox.Show("Lấy mã khách hàng không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            FormXemHD_Load(sender, e);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable a = new DataTable();
+            if (radioButtonSearch.Checked)
+            {
+                a = busHD.SearchMaKH(cbMaKH.Text);
+                dtgHoaDon.DataSource = a;
+            }
+            else
+            {
+                a = busHD.SearchDate(dateTimePicker2.Text, dateTimePicker1.Text);
+                dtgHoaDon.DataSource = a;
+            }
         }
     }
 }
