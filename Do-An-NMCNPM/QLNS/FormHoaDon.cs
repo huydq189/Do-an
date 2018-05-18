@@ -183,7 +183,6 @@ namespace QLNS
                         MessageBox.Show("Khách hàng chưa đăng ký thành viên không được mua thiếu!", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    HD.SoTienNo = "0";
                     HD.SoTienThu = txbTongTien.Text;
                     HD.MaNV = txbMaNV.Text;
                     HD.NgHD = txbNgayLap.Text;
@@ -209,13 +208,11 @@ namespace QLNS
                         double SoTienNo = double.Parse(txbTienThua.Text) * (-1);
                         NoMoi = tienNoHienTai + SoTienNo;
                         HD.SoTienThu = txbSoTienThu.Text;
-                        HD.SoTienNo = SoTienNo.ToString();
                     }
                     else
                     {
                         HD.SoTienThu = txbTongTien.Text;
                         NoMoi = tienNoHienTai;
-                        HD.SoTienNo = "0";
                     }
                     HD.MaNV = txbMaNV.Text;
                     HD.NgHD = txbNgayLap.Text;

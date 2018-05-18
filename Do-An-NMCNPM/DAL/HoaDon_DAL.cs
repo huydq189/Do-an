@@ -13,12 +13,12 @@ namespace DAL
         KetNoiDB cn = new KetNoiDB();
         public bool LuuHoaDon(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaHD,MaKH, MaNV, NgHD, TriGia,SoTienThu,SoTienNo) VALUES('"+hd.MaHD+"','" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "','"+hd.SoTienThu+"','"+hd.SoTienNo+"')");
+            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaHD,MaKH, MaNV, NgHD, TriGia,SoTienThu) VALUES('"+hd.MaHD+"','" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "','"+hd.SoTienThu+"')");
         }
 
         public bool SuaHD(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("UPDATE HOADON SET  MaNV ='" + hd.MaNV + "', MaKH ='" + hd.MaKH + "', NgHD ='" + hd.NgHD + "', TriGia ='" + hd.TriGia + " ', SoTienThu='"+hd.SoTienThu+"', SoTienNo='"+hd.SoTienNo+"' WHERE MaHD='" + hd.MaHD + "'");
+            return cn.ExcuteNoneQuery("UPDATE HOADON SET  MaNV ='" + hd.MaNV + "', MaKH ='" + hd.MaKH + "', NgHD ='" + hd.NgHD + "', TriGia ='" + hd.TriGia + " ', SoTienThu='"+hd.SoTienThu+"' WHERE MaHD='" + hd.MaHD + "'");
         }
 
         public bool XoaHD(HoaDon_DTO hd)

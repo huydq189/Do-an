@@ -14,7 +14,6 @@ namespace DTO
         private string _NgHD;
         private string _TriGia;
         private string _SoTienThu;
-        private string _SoTienNo;
 
 
         public string MaNV
@@ -27,6 +26,5 @@ namespace DTO
         public string NgHD { get => _NgHD; set => _NgHD = value; }
         public string TriGia { get => _TriGia; set => _TriGia = value; }
         public string SoTienThu { get => _SoTienThu; set => _SoTienThu = value; }
-        public string SoTienNo { get => _SoTienNo; set => _SoTienNo = value; }
     }
 }
