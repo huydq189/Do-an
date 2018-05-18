@@ -17,16 +17,16 @@ namespace DAL
         }
         public bool ThemKhachHang(KhachHang_DTO kh)
         {
-            string query = @"SET DATEFORMAT DMY";
-            query += @" INSERT INTO KHACHHANG";
+            //string query = @"SET DATEFORMAT DMY";
+            string query = @" INSERT INTO KHACHHANG";
             query += @" (MaKH, HoTen, SDT, SoTienNo, CMND, Email, NgaySinh)";
             query+= @" VALUES  ('"+kh.MaKH+"',N'"+kh.HoTen+"','"+kh.SDT+"','"+kh.SoTienNo+"','"+kh.CMND+"',N'"+kh.Email+"','"+kh.NgaySinh+"')";
             return cn.ExcuteNoneQuery(query);
         }
         public bool UpdateKH(KhachHang_DTO kh)
         {
-            string query = @"SET DATEFORMAT DMY ";
-            query += @" UPDATE       KHACHHANG ";
+            //string query = @"SET DATEFORMAT DMY ";
+            string query = @" UPDATE       KHACHHANG ";
             query += @" SET HoTen =N'" + kh.HoTen + "', SDT ='" + kh.SDT + "', SoTienNo ='" + kh.SoTienNo + "', Email =N'" + kh.Email + "', CMND ='" + kh.CMND + "', NgaySinh ='" + kh.NgaySinh + "'";
             query+=@" WHERE MaKH='"+kh.MaKH+"'";
             return cn.ExcuteNoneQuery(query);
@@ -35,6 +35,16 @@ namespace DAL
         {
             string query = @"DELETE KHACHHANG WHERE MaKH='"+kh.MaKH+"'";
             return cn.ExcuteNoneQuery(query);
+        }
+        public string LayMaKHMax()
+        {
+            string sql = @"SELECT MAX(MaKH) FROM KHACHHANG";
+            return cn.GetValue(sql);
+        }
+        public DataTable searchKH(string a)
+        {
+            string sql = @"SELECT * FROM KHACHHANG WHERE HoTen LIKE '%" + a + "%' AND MAKH != '1'";
+            return cn.GetTable(sql);
         }
     }
 }

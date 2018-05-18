@@ -73,5 +73,13 @@ namespace BUS
         {
             return hd.SearchDate(a, b);
         }
+        /*public bool TaoPhieuThu(HoaDon_DTO hd1, string a)
+        {
+            return hd.TaoPhieuThu(hd1,a);
+        }*/
+        public DataTable getCTHD(string MaHD)
+        {
+            return hd.getCTHD(MaHD);
+        }
     }
 }

@@ -29,5 +29,13 @@ namespace BUS
         {
             return khDal.XoaKH(kh);
         }
+        public string LayMaKH()
+        {
+            return (int.Parse(khDal.LayMaKHMax()) + 1).ToString();
+        }
+        public DataTable searchKH(string a)
+        {
+            return khDal.searchKH(a);
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txbSoTIenNo = new System.Windows.Forms.TextBox();
             this.txbHoTen = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -49,13 +49,16 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDSKH)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dtNgaySinh);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.txbSoTIenNo);
             this.panel1.Controls.Add(this.txbHoTen);
             this.panel1.Controls.Add(this.txbEmail);
@@ -73,15 +76,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 128);
             this.panel1.TabIndex = 0;
-            // 
-            // dtNgaySinh
-            // 
-            this.dtNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgaySinh.Location = new System.Drawing.Point(797, 48);
-            this.dtNgaySinh.Name = "dtNgaySinh";
-            this.dtNgaySinh.Size = new System.Drawing.Size(145, 20);
-            this.dtNgaySinh.TabIndex = 2;
             // 
             // txbSoTIenNo
             // 
@@ -215,55 +209,83 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(146, 175);
+            this.btnThem.Location = new System.Drawing.Point(136, 158);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(75, 40);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Them";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(407, 175);
+            this.btnXoa.Location = new System.Drawing.Point(342, 158);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(75, 40);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(295, 175);
+            this.btnSua.Location = new System.Drawing.Point(237, 158);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(66, 40);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(521, 175);
+            this.btnLuu.Location = new System.Drawing.Point(449, 158);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(71, 40);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(636, 175);
+            this.btnHuy.Location = new System.Drawing.Point(550, 158);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.Size = new System.Drawing.Size(68, 40);
             this.btnHuy.TabIndex = 2;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // txbSearch
+            // 
+            this.txbSearch.Location = new System.Drawing.Point(719, 173);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(158, 20);
+            this.txbSearch.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(883, 158);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 50);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(797, 47);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(145, 20);
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 549);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.txbSearch);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -277,6 +299,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDSKH)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -284,7 +307,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtNgaySinh;
         private System.Windows.Forms.TextBox txbSoTIenNo;
         private System.Windows.Forms.TextBox txbHoTen;
         private System.Windows.Forms.TextBox txbEmail;
@@ -303,5 +325,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private System.Windows.Forms.TextBox txbSearch;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

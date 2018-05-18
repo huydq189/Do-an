@@ -51,8 +51,8 @@ namespace QLNS
             txbEmail.DataBindings.Add("Text", dtgDSKH.DataSource, "Email");
             txbCMND.DataBindings.Clear();
             txbCMND.DataBindings.Add("Text", dtgDSKH.DataSource, "CMND");
-            dtNgaySinh.DataBindings.Clear();
-            dtNgaySinh.DataBindings.Add("Text", dtgDSKH.DataSource, "NgaySinh");
+            dateTimePicker1.DataBindings.Clear();
+            dateTimePicker1.DataBindings.Add("Text", dtgDSKH.DataSource, "NgaySinh");
             txbSoTIenNo.DataBindings.Clear();
             txbSoTIenNo.DataBindings.Add("Text", dtgDSKH.DataSource, "SoTienNo");
 
@@ -63,7 +63,7 @@ namespace QLNS
             kh.HoTen = txbHoTen.Text.Trim();
             kh.Email = txbEmail.Text.Trim();
             kh.SDT = txbSDT.Text.Trim();
-            kh.NgaySinh = dtNgaySinh.Text.Trim();
+            kh.NgaySinh = dateTimePicker1.Value.ToShortDateString();
             kh.SoTienNo = txbSoTIenNo.Text.Trim();
             kh.CMND = txbCMND.Text.Trim();
         }
@@ -73,17 +73,38 @@ namespace QLNS
             txbHoTen.Enabled = a;
             txbCMND.Enabled = a;
             txbSoTIenNo.Enabled = a;
-            dtNgaySinh.Enabled = a;
+            dateTimePicker1.Enabled = a;
             txbEmail.Enabled = a;
             txbSDT.Enabled = a;
+        }
+        void clearKH()
+        {
+            txbHoTen.Text = "";
+            txbCMND.Text = "";
+            txbSoTIenNo.Text = "";
+            dateTimePicker1.Text = "";
+            txbEmail.Text = "";
+            txbSDT.Text = "";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
             gruad = 0;
             khoaDK(true);
+            clearKH();
+            txbMaKH.Enabled = false;
+            try
+            {
+                txbMaKH.Text = busKH.LayMaKH();
+            }
+            catch
+            {
+                MessageBox.Show("Lấy mã khách hàng không thành công!");
+            }
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -91,6 +112,7 @@ namespace QLNS
             btnHuy.Enabled = true;
             gruad = 1;
             khoaDK(true);
+            txbMaKH.Enabled = false;
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -139,6 +161,12 @@ namespace QLNS
         private void btnHuy_Click(object sender, EventArgs e)
         {
             frmKhachHang_Load(sender, e);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            dtgDSKH.DataSource = busKH.searchKH(txbSearch.Text);
+            bingding();
         }
     }
 }
