@@ -26,8 +26,10 @@ namespace QLNS
             this.WindowState = FormWindowState.Maximized;
             DataTable hd = new DataTable();
             try { hd = busHD.LayDuLieu(); }
-            catch { MessageBox.Show("Lỗi khi lấy danh sách hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch { MessageBox.Show("Lỗi khi lấy danh sách hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
             dtgHoaDon.DataSource = hd;
+            textBox1.DataBindings.Clear();
+            textBox1.DataBindings.Add("Text", dtgHoaDon.DataSource, "MaHD");
             try
             {
                 cbMaKH.DataSource = busHD.LayMaKH();
@@ -58,6 +60,13 @@ namespace QLNS
                 a = busHD.SearchDate(dateTimePicker2.Text, dateTimePicker1.Text);
                 dtgHoaDon.DataSource = a;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataTable cthd = new DataTable();
+            try { cthd = busHD.getCTHD(textBox1.Text); } catch { MessageBox.Show("Lỗi"); }
+            dtgCTHD.DataSource = cthd;
         }
     }
 }
