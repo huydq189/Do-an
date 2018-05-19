@@ -18,7 +18,7 @@ namespace BUS
             return dal.LoadDSTatCaSach();
         }
         //Themsach
-        public static void ThemSach(Sach_DTO sach)
+        public void ThemSach(Sach_DTO sach)
         {
            // Sach_DAL.ThemSach(sach);
         }
@@ -28,24 +28,28 @@ namespace BUS
             //Sach_DAL.XoaSach(MaSach);
         }
         //Timtheotheloai
-        public static void Timtheloai(string TheLoai)
+        public DataTable Timtheloai(string TheLoai)
         {
-            //Sach_DAL.Timtheotheloai(TheLoai);
+            return dal.Timtheotheloai(TheLoai);
         }
         //Tim theo tac gia
-        public static void Timtacgia(string TacGia)
+        public DataTable Timtacgia(string TacGia)
         {
-            //Sach_DAL.Timtheotacgia(TacGia); 
+            return dal.Timtheotacgia(TacGia);
         }
         //Timtheomasach
-        public static void Timmasach(int MaSach)
+        public DataTable Timmasach(int MaSach)
         {
-           // Sach_DAL.Timtheomasach(MaSach);
+            return dal.Timtheomasach(MaSach);
         }
         //TimtheoTensach
-        public static void Timtheotensach(string TenSach)
+        public DataTable Timtheotensach(string TenSach)
         {
-          //Sach_DAL.//TimTheotensach(TenSach);
+            return dal.TimTheotensach(TenSach);
+        }
+        public void SuaSach(Sach_DTO et)
+        {
+            dal.Suasach(et);
         }
     }
 }

@@ -136,6 +136,7 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Tìm theo mã sách";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -147,6 +148,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Tìm theo tác giả";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -158,6 +160,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tìm theo thể loại";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -169,6 +172,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tìm theo tên sách";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // simpleButton4
             // 
@@ -178,6 +182,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(97, 50);
             this.simpleButton4.TabIndex = 5;
             this.simpleButton4.Text = "Tìm kiếm";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // labelControl2
             // 
