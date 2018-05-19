@@ -13,12 +13,12 @@ namespace DAL
         KetNoiDB cn = new KetNoiDB();
         public bool LuuHoaDon(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("INSERT INTO HOADON (MaKH, MaNV, NgHD, TriGia) VALUES('" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "')");
+            return cn.ExcuteNoneQuery("SET DATEFORMAT DMY INSERT INTO HOADON (MaHD,MaKH, MaNV, NgHD, TriGia,SoTienThu) VALUES('"+hd.MaHD+"','" + hd.MaKH + "','" + hd.MaNV + "','" + hd.NgHD + "','" + hd.TriGia + "','"+hd.SoTienThu+"')");
         }
 
         public bool SuaHD(HoaDon_DTO hd)
         {
-            return cn.ExcuteNoneQuery("UPDATE HOADON SET  MaNV ='" + hd.MaNV + "', MaKH ='" + hd.MaKH + "', NgHD ='" + hd.NgHD + "', TriGia ='" + hd.TriGia + " ' WHERE MaHD='" + hd.MaHD + "'");
+            return cn.ExcuteNoneQuery("UPDATE HOADON SET  MaNV ='" + hd.MaNV + "', MaKH ='" + hd.MaKH + "', NgHD ='" + hd.NgHD + "', TriGia ='" + hd.TriGia + " ', SoTienThu='"+hd.SoTienThu+"' WHERE MaHD='" + hd.MaHD + "'");
         }
 
         public bool XoaHD(HoaDon_DTO hd)
@@ -26,9 +26,9 @@ namespace DAL
             return cn.ExcuteNoneQuery("DELETE FROM HOADON WHERE MaHD='" + hd.MaHD + "'");
         }
 
-        public DataTable LayDuLieu(string DK)
+        public DataTable LayDuLieu()
         {
-            return cn.GetTable("SELECT * FROM HOADON WHERE " + DK);
+            return cn.GetTable("SELECT * FROM HOADON");
         }
         public string LayMaHDMax()
         {
@@ -46,12 +46,11 @@ namespace DAL
         {
             return cn.GetValue("SELECT SoTienNo FROM KHACHHANG WHERE MaKH= '" + Makh + "'");
         }
-        public bool  KiemTraMaKH(string MaKH)
+        public DataTable LayMaKH()
         {
-            if (cn.GetTable("SELECT * FROM KHACHHANG WHERE MaKH='" + MaKH + "'") != null)
-                return true;
-            return false;
+            return cn.GetTable("SELECT MaKH FROM KHACHHANG WHERE MaKH > 1");
         }
+
         public bool UpdateTienNo(string MaKH, double TienNo)
         {
             return cn.ExcuteNoneQuery("UPDATE KHACHHANG SET SoTienNo= '" + TienNo + "' WHERE MaKH='" + MaKH + "'");
@@ -59,6 +58,32 @@ namespace DAL
         public bool UpdateHoaDonLoi(string MaHD)
         {
             return cn.ExcuteNoneQuery("UPDATE HOADON SET TriGia= '0' WHERE MAHD='" + MaHD + "' ");
+        }
+        public DataTable SearchMaKH(String MaKH)
+        {
+            return cn.GetTable("SELECT * FROM HOADON WHERE MaKH='" + MaKH + "'");
+        }
+        public DataTable SearchDate(string a, string b)
+        {
+            //string  sql = @"set dateformat dmy";
+                    string sql=      @" SELECT* FROM HOADON";
+                    sql += @" WHERE NgHD BETWEEN '" + a + "' AND '" + b + "'";
+            return cn.GetTable(sql);
+        }
+        /*public bool TaoPhieuThu(HoaDon_DTO hd, string a)
+        {
+            string query = @"SET DATEFORMAT DMY";
+            query += @" INSERT INTO PHIEUTHU";
+            query += @"(MaKH, NgayThu, MaNV,SoTienThu)";
+            query += @"VALUES        ('" + hd.MaKH + "','" + hd.NgHD + "','" + hd.MaNV + "','" + a + "')";
+            return cn.ExcuteNoneQuery(query);
+        }*/
+        public DataTable getCTHD(string MaHD)
+        {
+            string query = @"SELECT SACH.MaNXB, SACH.TenSach,SACH.TacGia,SACH.TheLoai,CTHD.SoLuong ";
+            query += @" FROM CTHD JOIN SACH ON CTHD.MaSach=SACH.MaSach ";
+            query += @" WHERE MaHD= '" + MaHD + "'";
+            return cn.GetTable(query);
         }
     }
 }

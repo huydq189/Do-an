@@ -9,112 +9,43 @@ using DTO;
 
 namespace DAL
 {
-    public class sqlConnectionData
-    {
-        public static SqlConnection Hamketnoi()
-        {
-            SqlConnection cnn = new SqlConnection("Sever=.;Database=QLNS;Trusted_Connection=True");
-            return cnn;
-        }
-    }
-
     public class Sach_DAL
     {
+        KetNoiDB cn = new KetNoiDB();
         //Load danh sach tat ca sach
-        public static DataTable LoadDSTatCaSach()
+        public DataTable LoadDSTatCaSach()
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_LOADSACH", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
-        }
-        //Them sach
-        public static void ThemSach(Sach_DTO sach)
-        {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_THEMSACH", cnn);
-            cmd.Parameters.Add("@MaNXB", SqlDbType.Int);
-            cmd.Parameters.Add("@TenSach", SqlDbType.NVarChar, 70);
-            cmd.Parameters.Add("@TacGia", SqlDbType.NVarChar, 70);
-            cmd.Parameters.Add("@TheLoai", SqlDbType.NVarChar, 100);
-            cmd.Parameters.Add("@DonGia", SqlDbType.Money);
-            cmd.Parameters.Add("@SoLuong", SqlDbType.Int);
-            cmd.Parameters["@MaNXB"].Value = sach.MaNXB;
-            cmd.Parameters["@TenSach"].Value = sach.TenSach;
-            cmd.Parameters["@TacGia"].Value = sach.TacGia;
-            cmd.Parameters["@TheLoai"].Value = sach.TheLoai;
-            cmd.Parameters["@DonGia"].Value = sach.DonGia;
-            cmd.Parameters["@SoLuong"].Value = sach.SoLuong;
-            cnn.Open();
-            cmd.ExecuteNonQuery();
-            cnn.Close();
-        }
-        //Xoa sach theo Masach
-        public static void XoaSach(int MaSach)
-        {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_XOASACH", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MaSach", SqlDbType.Int);
-            cmd.Parameters["@MaSach"].Value = MaSach;
-            cnn.Open();
-            cmd.ExecuteNonQuery();
-            cnn.Close();
+            return cn.GetTable("SELECT * FROM SACH");
         }
         //Tim sach the loai
-        public static DataTable Timtheotheloai(string Theloai)
+        public DataTable Timtheotheloai(string Theloai)
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_TIMSACHTHELOAI", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@TheLoai", SqlDbType.NVarChar, 100);
-            cmd.Parameters["@TheLoai"].Value = Theloai;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
+            return cn.GetTable("SELECT * FROM SACH WHERE TheLoai =N'" + Theloai + "'");
         }
         //Tim sach theo tac gia
-        public static DataTable Timtheotacgia(string TenTacGia)
+        public DataTable Timtheotacgia(string TenTacGia)
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_TIMSACHTACGIA", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@TacGia", SqlDbType.NVarChar, 70);
-            cmd.Parameters["@TacGia"].Value = TenTacGia;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
+            return cn.GetTable("SELECT * FROM SACH WHERE TacGia = N'" + TenTacGia + "'");
         }
         //Tim sach theo ten sach
-        public static DataTable TimTheotensach(string TenSach)
+        public DataTable TimTheotensach(string TenSach)
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_TIMSACHTENSACH", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@TenSach", SqlDbType.NVarChar, 70);
-            cmd.Parameters["@TenSach"].Value = TenSach;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
+            return cn.GetTable("SELECT * FROM SACH WHERE TenSach = N'" + TenSach + "'");
         }
         //Tim sach ma sach
-        public static DataTable Timtheomasach(int MaSach)
+        public DataTable Timtheomasach(int MaSach)
         {
-            SqlConnection cnn = sqlConnectionData.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("SP_TIMSACHMASACH", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MaSach", SqlDbType.Int);
-            cmd.Parameters["@MaSach"].Value = MaSach;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dtb = new DataTable();
-            da.Fill(dtb);
-            return dtb;
+            return cn.GetTable("SELECT * FROM SACH WHERE MaSach = '" + MaSach + "'");
+        }
+        //Sua sach
+        public void Suasach(Sach_DTO et)
+        {
+            cn.ExcuteNoneQuery("UPDATE SACH SET MaSach= '" + et.MaSach + "',MaNXB='" + et.MaNXB + "', TenSach=N'" + et.TenSach + "',TheLoai =N'" + et.TheLoai + "',TacGia=N'" + et.TacGia + "',SoLuong = N'" + et.SoLuong + "' WHERE MaSach ='" + et.MaSach + "'");
+        }
+        //Xoa sach
+        public void Xoasach(Sach_DTO et)
+        {
+            cn.ExcuteNoneQuery("DELETE FROM SACH WHERE MaSach ='" + et.MaSach + "'");
         }
     }
 }

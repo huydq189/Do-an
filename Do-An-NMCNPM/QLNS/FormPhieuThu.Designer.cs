@@ -396,6 +396,7 @@
             this.Location = new System.Drawing.Point(1, 141);
             this.Name = "FormPhieuThu";
             this.Text = "Phiếu thu";
+            this.Load += new System.EventHandler(this.FormPhieuThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
