@@ -15,7 +15,7 @@ namespace DAL
         public void MoKetNoi()
         {
             if (KetNoiDB.conn == null)
-                KetNoiDB.conn = new SqlConnection(@"Data Source=DESKTOP-OOT7VPD;Initial Catalog=QLNS;Integrated Security=True");
+                KetNoiDB.conn = new SqlConnection(@"Data Source=HUY-PC\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
             if (conn.State != ConnectionState.Open)
                 KetNoiDB.conn.Open();
         }
@@ -69,13 +69,13 @@ namespace DAL
         {
 
             string temp = null;
-            MoKetNoi();
-            SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
-            SqlDataReader sqldr = sqlcmd.ExecuteReader();
-            while (sqldr.Read())
-                temp = sqldr[0].ToString();
-            DongKetNoi();
-            return temp;
+                MoKetNoi();
+                SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
+                SqlDataReader sqldr = sqlcmd.ExecuteReader();
+                while (sqldr.Read())
+                    temp = sqldr[0].ToString();
+                DongKetNoi();
+                return temp;
         }
 
     }

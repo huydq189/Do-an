@@ -22,5 +22,10 @@ namespace QLNS
         {
 
         }
+
+        private void FormPhieuThu_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

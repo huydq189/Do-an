@@ -27,9 +27,9 @@ namespace BUS
             return hd.XoaHD(dt);
         }
 
-        public DataTable LayDuLieu(string DK)
+        public DataTable LayDuLieu()
         {
-            return hd.LayDuLieu(DK);
+            return hd.LayDuLieu();
         }
         public string LayMaHD()
         {
@@ -50,16 +50,11 @@ namespace BUS
         }
         public string LayTienNoKH(string Makh)
         {
-            string TN = hd.LayTienNoKH(Makh);
-            if (TN == null)
-            {
-                return "0";
-            }
-            else return TN;
+            return hd.LayTienNoKH(Makh);
         }
-        public bool KiemTraMaKH(string MaKH)
+        public DataTable LayMaKH()
         {
-            return hd.KiemTraMaKH(MaKH);
+            return hd.LayMaKH();
         }
         public bool UpdateTienNo(string MaKH, double TienNo)
         {
@@ -68,6 +63,23 @@ namespace BUS
         public bool UpdateHoaDonLoi(string MaHD)
         {
             return hd.UpdateHoaDonLoi(MaHD);
+        }
+        public DataTable SearchMaKH(String MaKH)
+        {
+            return hd.SearchMaKH(MaKH);
+        }
+
+        public DataTable SearchDate(string a, string b)
+        {
+            return hd.SearchDate(a, b);
+        }
+        /*public bool TaoPhieuThu(HoaDon_DTO hd1, string a)
+        {
+            return hd.TaoPhieuThu(hd1,a);
+        }*/
+        public DataTable getCTHD(string MaHD)
+        {
+            return hd.getCTHD(MaHD);
         }
     }
 }

@@ -17,5 +17,16 @@ namespace QLNS
         {
             InitializeComponent();
         }
+
+        private void FormPhieuNhap_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            FormThemNXB frm = new FormThemNXB();
+            frm.ShowDialog();
+        }
     }
 }

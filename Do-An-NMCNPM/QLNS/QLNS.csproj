@@ -70,6 +70,10 @@
     <Compile Include="FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs" />
     <Compile Include="FormPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +104,18 @@
     <Compile Include="FormXemHD.Designer.cs">
       <DependentUpon>FormXemHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromNhanVien.Designer.cs">
+      <DependentUpon>FromNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +130,10 @@
     <EmbeddedResource Include="BCTon.resx">
       <DependentUpon>BCTon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDon.resx">
+      <DependentUpon>FormHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx" />
     <EmbeddedResource Include="FormPhieuNhap.resx">
       <DependentUpon>FormPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +145,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemNXB.resx">
       <DependentUpon>FormThemNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXemHD.resx">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromNhanVien.resx">
+      <DependentUpon>FromNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>

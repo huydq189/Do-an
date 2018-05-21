@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
-    </Reference>
     <Reference Include="DTO">
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
@@ -49,8 +46,15 @@
     <Compile Include="Account_BUS.cs" />
     <Compile Include="CTHD_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach_BUS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{439e3389-9864-40da-a3f1-76597206cbcf}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

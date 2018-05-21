@@ -1,9 +1,0 @@
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\bin\Debug\DAL.dll
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\bin\Debug\DAL.pdb
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\bin\Debug\DTO.dll
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\bin\Debug\DTO.pdb
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\obj\Debug\DAL.dll
-C:\Users\Anh\Documents\GitHub\Do-an\Do-An-NMCNPM\DAL\obj\Debug\DAL.pdb

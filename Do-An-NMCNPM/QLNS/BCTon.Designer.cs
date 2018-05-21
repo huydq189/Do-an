@@ -136,6 +136,7 @@
             this.Controls.Add(this.panelControl3);
             this.Name = "BCTon";
             this.Text = "Báo cáo tồn";
+            this.Load += new System.EventHandler(this.BCTon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
