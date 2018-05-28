@@ -7,6 +7,10 @@ _**MÔ TẢ**_:
 
 _**THÀNH VIÊN**_:
 + Đỗ Quốc Huy - 16520505
++	Nguyễn Viết Anh - 16521550
++ Lò Thế Vĩ - 16521421
++ Trương Vĩnh Đức - 16521502
+
 
 _**CHỨC NĂNG CHÍNH**_: 
 + Lập hóa đơn, xem hóa đơn
