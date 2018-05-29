@@ -8,20 +8,12 @@ namespace DTO
 {
     public class Sach_DTO
     {
-        private int _MaSach;
-        private string _MaNXB;
-        private string _TenSach;
-        private string _TacGia;
-        private string _TheLoai;
-        private float _DonGia;
-        private string _SoLuong;
-
-        public int MaSach { get => _MaSach; set => _MaSach = value; }
-        public string MaNXB { get => _MaNXB; set => _MaNXB = value; }
-        public string TenSach { get => _TenSach; set => _TenSach = value; }
-        public string TacGia { get => _TacGia; set => _TacGia = value; }
-        public string TheLoai { get => _TheLoai; set => _TheLoai = value; }
-        public float DonGia { get => _DonGia; set => _DonGia = value; }
-        public string SoLuong { get => _SoLuong; set => _SoLuong = value; }
+        public int MaSach { get; set; }
+        public string TenSach { get; set; }
+        public string TheLoai { get; set; }
+        public string TacGia { get; set; }
+        public double DonGia { get; set; }
+        public int MaNXB { get; set; }
+        public int SoLuong = 0;
     }
 }

@@ -16,16 +16,16 @@ namespace BUS
         public DataTable LoadDSSach()
         {
             return dal.LoadDSTatCaSach();
+        }       
+        //Xoa sach
+        public void XoaSach(Sach_DTO et)
+        {
+            dal.Xoasach(et);
         }
         //Themsach
-        public void ThemSach(Sach_DTO sach)
+        public void ThemSach(Sach_DTO et)
         {
-           // Sach_DAL.ThemSach(sach);
-        }
-        //Xoa sach
-        public static void XoaSach(int MaSach)
-        {
-            //Sach_DAL.XoaSach(MaSach);
+            dal.Themsach(et);
         }
         //Timtheotheloai
         public DataTable Timtheloai(string TheLoai)

@@ -43,36 +43,22 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -196,165 +182,6 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Mã nhân viên";
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.textBox7);
-            this.panelControl1.Controls.Add(this.textBox6);
-            this.panelControl1.Controls.Add(this.textBox5);
-            this.panelControl1.Controls.Add(this.textBox4);
-            this.panelControl1.Controls.Add(this.textBox3);
-            this.panelControl1.Controls.Add(this.textBox2);
-            this.panelControl1.Controls.Add(this.textBox1);
-            this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.labelControl10);
-            this.panelControl1.Controls.Add(this.labelControl9);
-            this.panelControl1.Controls.Add(this.labelControl8);
-            this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Controls.Add(this.labelControl6);
-            this.panelControl1.Controls.Add(this.labelControl5);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Location = new System.Drawing.Point(3, 145);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(318, 241);
-            this.panelControl1.TabIndex = 23;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(277, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "(*)";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(224, 155);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(52, 23);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Thêm";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(100, 157);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(118, 21);
-            this.textBox7.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(100, 49);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(196, 21);
-            this.textBox6.TabIndex = 16;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(100, 211);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 21);
-            this.textBox5.TabIndex = 15;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(100, 130);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 21);
-            this.textBox4.TabIndex = 14;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(100, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 21);
-            this.textBox3.TabIndex = 13;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(100, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 21);
-            this.textBox2.TabIndex = 12;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 21);
-            this.textBox1.TabIndex = 11;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(10, 187);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(42, 13);
-            this.labelControl11.TabIndex = 10;
-            this.labelControl11.Text = "Số lượng";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(11, 214);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(37, 13);
-            this.labelControl10.TabIndex = 9;
-            this.labelControl10.Text = "Đơn giá";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(10, 160);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(36, 13);
-            this.labelControl9.TabIndex = 8;
-            this.labelControl9.Text = "Mã NXB";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(10, 133);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(34, 13);
-            this.labelControl8.TabIndex = 7;
-            this.labelControl8.Text = "Tác giả";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(10, 106);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(37, 13);
-            this.labelControl7.TabIndex = 6;
-            this.labelControl7.Text = "Thể loại";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(10, 79);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(43, 13);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Tên sách";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 52);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(39, 13);
-            this.labelControl5.TabIndex = 4;
-            this.labelControl5.Text = "Mã sách";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(5, 5);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(90, 19);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Chi tiết nhập";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -366,7 +193,7 @@
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(570, 15);
+            this.simpleButton2.Location = new System.Drawing.Point(489, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 34;
@@ -390,28 +217,77 @@
             this.simpleButton5.TabIndex = 33;
             this.simpleButton5.Text = "DS Phiếu";
             // 
-            // simpleButton3
+            // groupBox3
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(489, 15);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 31;
-            this.simpleButton3.Text = "Thống kê";
+            this.groupBox3.Controls.Add(this.simpleButton1);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Location = new System.Drawing.Point(8, 145);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(313, 246);
+            this.groupBox3.TabIndex = 35;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Nhập số lượng sách";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Số lượng ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Chọn sách";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(85, 29);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(182, 21);
+            this.comboBox3.TabIndex = 4;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(85, 70);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(183, 21);
+            this.textBox5.TabIndex = 3;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(185, 133);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(82, 45);
+            this.simpleButton1.TabIndex = 12;
+            this.simpleButton1.Text = "Thêm";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // FormPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 549);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
             this.Name = "FormPhieuNhap";
             this.Text = "Phiếu nhập";
             this.Load += new System.EventHandler(this.FormPhieuNhap_Load);
@@ -421,10 +297,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -445,28 +320,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBox5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

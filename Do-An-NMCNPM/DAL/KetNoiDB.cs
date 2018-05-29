@@ -38,7 +38,7 @@ namespace DAL
                 sqlcmd.ExecuteNonQuery();
                 DongKetNoi();
             }
-            catch
+            catch (Exception ex)
             {
                 DongKetNoi();
                 return false;
@@ -69,14 +69,44 @@ namespace DAL
         {
 
             string temp = null;
-                MoKetNoi();
-                SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
-                SqlDataReader sqldr = sqlcmd.ExecuteReader();
-                while (sqldr.Read())
-                    temp = sqldr[0].ToString();
-                DongKetNoi();
-                return temp;
+            MoKetNoi();
+            SqlCommand sqlcmd = new SqlCommand(StrSQL, conn);
+            SqlDataReader sqldr = sqlcmd.ExecuteReader();
+            while (sqldr.Read())
+                temp = sqldr[0].ToString();
+            DongKetNoi();
+            return temp;
         }
+        public DataSet EXreader(string sql)
 
+        {
+            MoKetNoi();
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            DataSet dt = new DataSet();
+            ad.Fill(dt);
+            return (dt);
+        }
+        // tra ve phan tu dc tim kiem 
+        public string ExScalar1(string sql)
+        {
+            MoKetNoi();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            string a = Convert.ToString(cmd.ExecuteScalar());
+            cmd.Dispose();
+            conn.Close();
+            return a;
+
+            //tra ve chuoi tim kiem 
+        }
+        public int ExScalar(string sql)
+        {
+            MoKetNoi();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int a = Convert.ToInt32(cmd.ExecuteScalar());
+
+            cmd.Dispose();
+            conn.Close();
+            return a;
+        }
     }
 }
