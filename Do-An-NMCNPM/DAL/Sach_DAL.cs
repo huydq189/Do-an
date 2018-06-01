@@ -13,6 +13,7 @@ namespace DAL
     {
         KetNoiDB cn = new KetNoiDB();
         //Load danh sach tat ca sach
+        
         public DataTable LoadDSTatCaSach()
         {
             return cn.GetTable("SELECT * FROM SACH");
@@ -40,7 +41,12 @@ namespace DAL
         //Sua sach
         public void Suasach(Sach_DTO et)
         {
-            cn.ExcuteNoneQuery("UPDATE SACH SET MaSach= '" + et.MaSach + "',MaNXB='" + et.MaNXB + "', TenSach=N'" + et.TenSach + "',TheLoai =N'" + et.TheLoai + "',TacGia=N'" + et.TacGia + "',SoLuong = N'" + et.SoLuong + "' WHERE MaSach ='" + et.MaSach + "'");
+            cn.ExcuteNoneQuery("UPDATE SACH set  TenSach = '" + et.TenSach + "', TacGia = '" + et.TacGia + "', TheLoai = '" + et.TheLoai + "', DonGia = '" + et.DonGia + "' where MaSach = '" + et.MaSach + "'");
+        }
+        //Them sach
+        public void Themsach(Sach_DTO et)
+        {
+            cn.ExcuteNoneQuery("INSERT INTO SACH (MaSach,MaNXB, TenSach, TacGia, TheLoai, DonGia, SoLuong) VALUES('" + et.MaSach + "','" + et.MaNXB + "','" + et.TenSach + "','" + et.TacGia + "','" + et.TheLoai + "','" + et.DonGia + "','" + et.SoLuong + "')");
         }
         //Xoa sach
         public void Xoasach(Sach_DTO et)

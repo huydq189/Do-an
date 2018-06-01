@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DTO">
-      <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
+      <HintPath>..\DTO\obj\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,8 +45,10 @@
   <ItemGroup>
     <Compile Include="Account_BUS.cs" />
     <Compile Include="CTHD_BUS.cs" />
+    <Compile Include="CTPN_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
+    <Compile Include="PhieuNhap_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach_BUS.cs" />
   </ItemGroup>
