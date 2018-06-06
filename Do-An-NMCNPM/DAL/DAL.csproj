@@ -51,6 +51,7 @@
     <Compile Include="KhachHang_DAL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="PhieuNhap_DAL.cs" />
+    <Compile Include="PhieuThu_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach_DAL.cs" />
   </ItemGroup>

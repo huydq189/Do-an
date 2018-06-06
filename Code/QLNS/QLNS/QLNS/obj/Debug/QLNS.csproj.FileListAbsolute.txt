@@ -45,3 +45,16 @@ D:\Tai Lieu\UIT\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cach
 D:\Tai Lieu\UIT\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 D:\Tai Lieu\UIT\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.exe
 D:\Tai Lieu\UIT\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.pdb
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.BCNo.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.BCTon.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.FormPhieuNhap.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.FormPhieuThu.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.FormSach.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.FormThemNXB.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.Mainform.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.csproj.GenerateResource.cache
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.exe.licenses
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.exe
+C:\Users\Windows 10 TIMT\Documents\GitHub\Do-an\Code\QLNS\QLNS\QLNS\obj\Debug\QLNS.pdb
