@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +43,6 @@
     <Compile Include="Account_DTO.cs" />
     <Compile Include="CTHD_DTO.cs" />
     <Compile Include="CTPN_DTO.cs" />
-    <Compile Include="PhieuThu_DTO.cs" />
     <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="NhanVien_DTO.cs" />
