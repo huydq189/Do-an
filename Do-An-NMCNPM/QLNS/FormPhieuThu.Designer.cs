@@ -30,23 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhieuThu));
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMaPT = new System.Windows.Forms.TextBox();
+            this.txtSoTienThu = new System.Windows.Forms.TextBox();
+            this.txtNgayThu = new System.Windows.Forms.TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -54,74 +45,32 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvPT = new System.Windows.Forms.DataGridView();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPT)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.textBox8);
-            this.panelControl3.Controls.Add(this.labelControl8);
-            this.panelControl3.Controls.Add(this.textBox4);
-            this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.labelControl1);
-            this.panelControl3.Controls.Add(this.textBox7);
-            this.panelControl3.Controls.Add(this.label1);
-            this.panelControl3.Controls.Add(this.textBox1);
-            this.panelControl3.Controls.Add(this.labelControl11);
+            this.panelControl3.Controls.Add(this.txtMaKH);
             this.panelControl3.Controls.Add(this.simpleButton1);
-            this.panelControl3.Controls.Add(this.textBox5);
-            this.panelControl3.Controls.Add(this.labelControl10);
             this.panelControl3.Controls.Add(this.labelControl9);
             this.panelControl3.Location = new System.Drawing.Point(2, 287);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(318, 260);
             this.panelControl3.TabIndex = 19;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(99, 172);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(196, 21);
-            this.textBox8.TabIndex = 22;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(10, 175);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(25, 13);
-            this.labelControl8.TabIndex = 21;
-            this.labelControl8.Text = "Gmail";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(99, 145);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 21);
-            this.textBox4.TabIndex = 20;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(10, 148);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(62, 13);
-            this.labelControl4.TabIndex = 19;
-            this.labelControl4.Text = "Số điện thoại";
             // 
             // labelControl1
             // 
@@ -133,61 +82,22 @@
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Thông tin nợ";
             // 
-            // textBox7
+            // txtMaKH
             // 
-            this.textBox7.Location = new System.Drawing.Point(100, 64);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(118, 21);
-            this.textBox7.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(274, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "(*)";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 21);
-            this.textBox1.TabIndex = 11;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(10, 94);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(32, 13);
-            this.labelControl11.TabIndex = 10;
-            this.labelControl11.Text = "Họ tên";
+            this.txtMaKH.Location = new System.Drawing.Point(100, 64);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(155, 21);
+            this.txtMaKH.TabIndex = 17;
             // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(219, 62);
+            this.simpleButton1.Location = new System.Drawing.Point(124, 127);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(52, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(114, 47);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Thêm";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(100, 118);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 21);
-            this.textBox5.TabIndex = 15;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(11, 121);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(32, 13);
-            this.labelControl10.TabIndex = 9;
-            this.labelControl10.Text = "Địa chỉ";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl9
             // 
@@ -199,9 +109,9 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.textBox6);
-            this.panelControl1.Controls.Add(this.textBox3);
-            this.panelControl1.Controls.Add(this.textBox2);
+            this.panelControl1.Controls.Add(this.txtMaPT);
+            this.panelControl1.Controls.Add(this.txtSoTienThu);
+            this.panelControl1.Controls.Add(this.txtNgayThu);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Controls.Add(this.labelControl5);
@@ -211,26 +121,26 @@
             this.panelControl1.Size = new System.Drawing.Size(318, 132);
             this.panelControl1.TabIndex = 21;
             // 
-            // textBox6
+            // txtMaPT
             // 
-            this.textBox6.Location = new System.Drawing.Point(100, 49);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(196, 21);
-            this.textBox6.TabIndex = 16;
+            this.txtMaPT.Location = new System.Drawing.Point(100, 49);
+            this.txtMaPT.Name = "txtMaPT";
+            this.txtMaPT.Size = new System.Drawing.Size(196, 21);
+            this.txtMaPT.TabIndex = 16;
             // 
-            // textBox3
+            // txtSoTienThu
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 21);
-            this.textBox3.TabIndex = 13;
+            this.txtSoTienThu.Location = new System.Drawing.Point(100, 103);
+            this.txtSoTienThu.Name = "txtSoTienThu";
+            this.txtSoTienThu.Size = new System.Drawing.Size(196, 21);
+            this.txtSoTienThu.TabIndex = 13;
             // 
-            // textBox2
+            // txtNgayThu
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 21);
-            this.textBox2.TabIndex = 12;
+            this.txtNgayThu.Location = new System.Drawing.Point(100, 76);
+            this.txtNgayThu.Name = "txtNgayThu";
+            this.txtNgayThu.Size = new System.Drawing.Size(196, 21);
+            this.txtNgayThu.TabIndex = 12;
             // 
             // labelControl7
             // 
@@ -270,7 +180,7 @@
             // 
             this.panelControl2.Controls.Add(this.dateTimePicker1);
             this.panelControl2.Controls.Add(this.labelControl15);
-            this.panelControl2.Controls.Add(this.textBox11);
+            this.panelControl2.Controls.Add(this.txtMaNV);
             this.panelControl2.Controls.Add(this.labelControl14);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Location = new System.Drawing.Point(2, 5);
@@ -295,12 +205,12 @@
             this.labelControl15.TabIndex = 21;
             this.labelControl15.Text = "Phiếu thu";
             // 
-            // textBox11
+            // txtMaNV
             // 
-            this.textBox11.Location = new System.Drawing.Point(100, 45);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(195, 21);
-            this.textBox11.TabIndex = 20;
+            this.txtMaNV.Location = new System.Drawing.Point(100, 45);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(195, 21);
+            this.txtMaNV.TabIndex = 20;
             // 
             // labelControl14
             // 
@@ -318,33 +228,19 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Mã nhân viên";
             // 
-            // labelControl12
+            // dtgvPT
             // 
-            this.labelControl12.Location = new System.Drawing.Point(461, 531);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(60, 13);
-            this.labelControl12.TabIndex = 24;
-            this.labelControl12.Text = "Tổng tiền nợ";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(527, 528);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(451, 21);
-            this.textBox9.TabIndex = 23;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(326, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 472);
-            this.dataGridView1.TabIndex = 22;
+            this.dtgvPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPT.Location = new System.Drawing.Point(326, 50);
+            this.dtgvPT.Name = "dtgvPT";
+            this.dtgvPT.Size = new System.Drawing.Size(663, 497);
+            this.dtgvPT.TabIndex = 22;
+            this.dtgvPT.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPT_RowEnter);
             // 
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(569, 21);
+            this.simpleButton2.Location = new System.Drawing.Point(488, 21);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 33;
@@ -368,15 +264,7 @@
             this.simpleButton5.Size = new System.Drawing.Size(75, 23);
             this.simpleButton5.TabIndex = 32;
             this.simpleButton5.Text = "DS Phiếu";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(488, 21);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 30;
-            this.simpleButton3.Text = "Thống kê";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // FormPhieuThu
             // 
@@ -386,10 +274,7 @@
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.labelControl12);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvPT);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
@@ -406,32 +291,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPT)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private System.Windows.Forms.TextBox textBox8;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private System.Windows.Forms.TextBox textBox4;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private System.Windows.Forms.TextBox txtMaKH;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.TextBox textBox5;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMaPT;
+        private System.Windows.Forms.TextBox txtSoTienThu;
+        private System.Windows.Forms.TextBox txtNgayThu;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -439,15 +314,12 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtMaNV;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvPT;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
