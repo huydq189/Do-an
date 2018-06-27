@@ -51,6 +51,7 @@
     <Compile Include="PhieuNhap_BUS.cs" />
     <Compile Include="PhieuThu_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyDinh_BUS.cs" />
     <Compile Include="Sach_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
