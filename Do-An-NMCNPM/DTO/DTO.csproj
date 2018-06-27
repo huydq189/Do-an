@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Account_DTO.cs" />
     <Compile Include="CTHD_DTO.cs" />
-    <Compile Include="CTPN_DTO.cs" />
     <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="NhanVien_DTO.cs" />

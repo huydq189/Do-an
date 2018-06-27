@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Account_DAL.cs" />
     <Compile Include="CTHD_DAL.cs" />
-    <Compile Include="CTPN_DAL.cs" />
     <Compile Include="HoaDon_DAL.cs" />
     <Compile Include="KetNoiDB.cs" />
     <Compile Include="KhachHang_DAL.cs" />
