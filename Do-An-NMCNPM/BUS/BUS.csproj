@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Account_BUS.cs" />
     <Compile Include="CTHD_BUS.cs" />
-    <Compile Include="CTPN_BUS.cs" />
     <Compile Include="HoaDon_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="PhieuNhap_BUS.cs" />

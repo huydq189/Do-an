@@ -112,7 +112,8 @@ namespace QLNS
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
                 et.MaSach = Convert.ToInt32(textBox6.Text);
                 et.TenSach = textBox2.Text;
                 et.TheLoai = textBox3.Text;
@@ -124,11 +125,11 @@ namespace QLNS
                 DataTable a = new DataTable();
                 a = bus.LoadDSSach();
                 dataGridView1.DataSource = a.AsDataView();
-                MessageBox.Show(et.TheLoai);
-                MessageBox.Show(et.TacGia);
-                MessageBox.Show(Convert.ToString(et.DonGia));
-                MessageBox.Show(et.TenSach);
-                MessageBox.Show(Convert.ToString(et.MaNXB));
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập thông tin");
+            }
 
 
         }
@@ -147,7 +148,7 @@ namespace QLNS
                 bus.SuaSach(et);
                 bus.LoadDSSach();
             }
-            catch { MessageBox.Show("loi"); }
+            catch { MessageBox.Show("Sửa không thành công"); }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
