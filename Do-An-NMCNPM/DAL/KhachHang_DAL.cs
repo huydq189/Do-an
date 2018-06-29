@@ -43,7 +43,7 @@ namespace DAL
         }
         public DataTable searchKH(string a)
         {
-            string sql = @"SELECT * FROM KHACHHANG WHERE HoTen LIKE '%" + a + "%' AND MAKH != '1'";
+            string sql = @"SELECT * FROM KHACHHANG WHERE HoTen LIKE N'%" + a + "%' AND MAKH != '1'";
             return cn.GetTable(sql);
         }
     }

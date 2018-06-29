@@ -90,7 +90,8 @@ namespace QLNS
 
         private void Mainform_Load(object sender, EventArgs e)
         {
-
+            if (TTTaiKhoan.ChucVu == "admin")
+                barButtonItem13.Enabled = true;
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -206,6 +207,30 @@ namespace QLNS
 
 
             BCNo frm1 = new BCNo();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "NhanVien")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+
+            NhanVien frm1 = new NhanVien();
             frm1.MdiParent = this;
             //Closeform("frmQLSV");
             frm1.Show();

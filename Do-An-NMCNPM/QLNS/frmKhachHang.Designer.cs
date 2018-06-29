@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txbSoTIenNo = new System.Windows.Forms.TextBox();
             this.txbHoTen = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDSKH)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 128);
             this.panel1.TabIndex = 0;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(797, 47);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(145, 20);
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // txbSoTIenNo
             // 
@@ -268,15 +277,6 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(797, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 20);
-            this.dateTimePicker1.TabIndex = 2;
             // 
             // frmKhachHang
             // 
