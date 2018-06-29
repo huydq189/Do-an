@@ -12,9 +12,30 @@ namespace BUS
     public class PhieuNhap_BUS
     {
         PhieuNhap_DAL dal = new PhieuNhap_DAL();
-        public void AddPHIEUNHAP(PhieuNhap_DTO et)
+        public DataTable Hienthiphieunhap()
         {
-            dal.addPHIEUNHAP(et);
+            return dal.SelectPhieuNhapAll();
+        }
+        public DataTable Hienthictphieunhap()
+        {
+            return dal.SelectPhieuNhapChiTietAll();
+        }
+        public bool themphieunhap(PhieuNhap_DTO et)
+        {
+            dal.Insertphieunhap(et);
+            return true;
+        }
+        public bool themchitietphieunhap(PhieuNhap_DTO p)
+        {
+            if (dal.GetPhieuNhapByName(p.MaPN, p.MaSach) == null)
+            {
+                dal.Insert(p);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public DataTable Combosach()
         {
@@ -32,9 +53,31 @@ namespace BUS
         {
             dal.updateSOLUONGSACH(sach);
         }
-        public DataTable SearchPN1()
+        public DataTable GetThamSoAll()
         {
-            return dal.SearchPN1();
+            return dal.GetThamSoAll();
+        }
+        public DataTable SlectSoLuongTon(int masach)
+        {
+            return dal.SlectSoLuongTon(masach);
+        }
+        public string LayMaPN()
+        {
+            string a = dal.LayMaPNMax();
+            if (a == "")
+            {
+                return "1";
+            }
+            else return (int.Parse(a) + 1).ToString();
+        }
+        public double LayTongTien(int MaPN)
+        {
+            return dal.Laytongtien(MaPN);
+        }
+        public bool LuuPN(PhieuNhap_DTO p)
+        {
+            dal.LuuPN(p);
+            return true;
         }
     }
 }

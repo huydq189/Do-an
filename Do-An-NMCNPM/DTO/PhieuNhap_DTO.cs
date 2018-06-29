@@ -10,7 +10,9 @@ namespace DTO
     {
         public int MaPN { get; set; }
         public int MaNV { get; set; }
-        public int TongTien { get; set; }
-        public string NGAYNHAP { get; set; }
+        public DateTime NgayNhap { get; set; }
+        public int MaSach { get; set; }
+        public double TongTien { get; set; }
+        public int SoLuong { get; set; }
     }
 }

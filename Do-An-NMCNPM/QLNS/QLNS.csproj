@@ -37,7 +37,7 @@
     <Reference Include="DevExpress.Data.v18.1" />
     <Reference Include="DevExpress.Utils.v18.1" />
     <Reference Include="DevExpress.Sparkline.v18.1.Core" />
-    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1" />
     <Reference Include="DevExpress.Printing.v18.1.Core" />
     <Reference Include="System" />
@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="FormPhieuThu.Designer.cs">
       <DependentUpon>FormPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formQuyDinh.Designer.cs">
+      <DependentUpon>formQuyDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSach.cs">
       <SubType>Form</SubType>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuThu.resx">
       <DependentUpon>FormPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formQuyDinh.resx">
+      <DependentUpon>formQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSach.resx">
       <DependentUpon>FormSach.cs</DependentUpon>

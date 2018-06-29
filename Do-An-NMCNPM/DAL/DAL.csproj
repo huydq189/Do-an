@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Account_DAL.cs" />
     <Compile Include="CTHD_DAL.cs" />
-    <Compile Include="CTPN_DAL.cs" />
     <Compile Include="HoaDon_DAL.cs" />
     <Compile Include="KetNoiDB.cs" />
     <Compile Include="KhachHang_DAL.cs" />
@@ -50,8 +49,15 @@
     <Compile Include="PhieuNhap_DAL.cs" />
     <Compile Include="PhieuThu_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyDinh_DAL.cs" />
     <Compile Include="Sach_DAL.cs" />
     <Compile Include="ThongTinNo_DAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{db5ef25f-11b1-40aa-9c7c-819a3b876856}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
