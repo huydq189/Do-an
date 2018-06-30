@@ -5,7 +5,7 @@
 **Đồ án cuối kì môn nhập môn công nghệ phần mềm**
 
 _**MÔ TẢ**_:
->Hiện nay nhiều nhà sách chưa có một chương trình chuyên quản lý ,thực hiện các chức năngh quản lí sách,nhập sách,bán sách,quản lí nhân viên và quản lí đầu mối. Nhân viên của nhà sách dùng hóa đơn in sẵn và quản lí nhà sách còn khó khăn trong việc giám sát tình hình kinh doanh của nhà sách. Một vài khó khăn kể như: 
+>Hiện nay nhiều nhà sách chưa có một chương trình chuyên quản lý ,thực hiện các chức năng quản lí sách,nhập sách,bán sách,quản lí nhân viên và quản lí đầu mối. Nhân viên của nhà sách dùng hóa đơn in sẵn và quản lí nhà sách còn khó khăn trong việc giám sát tình hình kinh doanh của nhà sách. Một vài khó khăn kể như: 
   >- Những xử lý quản lí sách , thanh toán vẫn còn thực hiện thủ công, có thể có sai sót trong tính toán.
   >- Khó giám sát phiên làm việc nhân viên.
   >- Khó khăn trong việc quản lý các thông tin khách hàng, thông tin hóa đơn, thông tin đầu mối, thông tin nhân viên...
