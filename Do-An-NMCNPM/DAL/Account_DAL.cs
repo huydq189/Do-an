@@ -23,6 +23,24 @@ namespace DAL
         {
             return  cn.GetValue("SELECT ChucVu FROM Account WHERE MaNV='" + a.MaNhanVien + "'");
         }
-
+        public bool AddAC(Account_DTO a)
+        {
+            string query = @"INSERT INTO ACCOUNT";
+            query += @" (TenTaiKhoan, MatKhau, ChucVu, MaNV)";
+            query += @" VALUES        ('" + a.TenTaiKhoan + "','" + a.MatKhau + "','" + a.ChucVu + "','" + a.MaNhanVien + "')";
+            return cn.ExcuteNoneQuery(query);
+        }
+        public bool delAC(Account_DTO a)
+        {
+            string query = @"DELETE ACCOUNT WHERE MaNV='" + a.MaNhanVien + "'";
+            return cn.ExcuteNoneQuery(query);
+        }
+        public bool Update(Account_DTO a)
+        {
+            string query = @"UPDATE ACCOUNT ";
+            query += @" SET  MatKhau ='" + a.MatKhau + "', ChucVu ='" + a.ChucVu + "'";
+            query += @" WHERE MaNV='" + a.MaNhanVien + "'";
+            return cn.ExcuteNoneQuery(query);
+        }
     }
 }

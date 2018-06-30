@@ -13,6 +13,6 @@ namespace DTO
         public int SoLuongItNhat { get; set; }
         public double NoToiDa { get; set; }
         public int Ttts { get; set; }
-        public int QDThuTien = 1;
+        public string QDThuTien = "True";
     }
 }

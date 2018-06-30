@@ -15,6 +15,8 @@ namespace QLNS
 {
     public partial class FormHoaDon : DevExpress.XtraEditors.XtraForm
     {
+        int tien = 0;
+        double TienTrc = 0;
         public FormHoaDon()
         {
             InitializeComponent();
@@ -75,57 +77,81 @@ namespace QLNS
 
         private void dtgCTHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtgCTHD.RowCount > 1) // số dòng lớn hơn 1 thì bắt đầu tính!
+            try
             {
-                int dong = dtgCTHD.CurrentCell.RowIndex; //lấy index của dòng đang được chọn!
-
-                if (dtgCTHD.Rows[dong].Cells[4].Value != null)
+                if (dtgCTHD.RowCount > 1) // số dòng lớn hơn 1 thì bắt đầu tính!
                 {
-                    double a = double.Parse(dtgCTHD.Rows[dong].Cells[4].Value.ToString()); // lấy giá trị thành tiền!
-                    txbTongTien.Text = (double.Parse(txbTongTien.Text) + a).ToString();// tính tổng tiền của hóa đơn
-                }
-
-                if (dtgCTHD.Rows[dong].Cells[0].Value != null && dtgCTHD.Rows[dong].Cells[2].Value != null) // nếu có mã sách vs số lượng rồi thì mới tính thành tiền của sách
-                {
-                    if (dtgCTHD.Rows[dong].Cells[1].Value != null && dtgCTHD.Rows[dong].Cells[3].Value != null)
+                    int dong = dtgCTHD.CurrentCell.RowIndex; //lấy index của dòng đang được chọn!
+                    //double TienTrc = -1;
+                    if (dtgCTHD.Rows[dong].Cells[4].Value != null && tien != 0)//tien = 1 có tiền mới, tiền = 0 tiền đã được tính r,tiền = -1 tiền sửa lại
                     {
-                        string MaSach = dtgCTHD.Rows[dong].Cells[0].Value.ToString();
-                        string SoLuong = dtgCTHD.Rows[dong].Cells[2].Value.ToString();
-                        int SoSachCon = int.Parse(busCT.LaySoLuongSach(MaSach));
-                        string SoLuongMoi = (SoSachCon - int.Parse(SoLuong)).ToString();
-                        if (int.Parse(SoLuongMoi) >= SoLuongTonMin)
-                            dtgCTHD.Rows[dong].Cells[4].Value = double.Parse(dtgCTHD.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dtgCTHD.Rows[dong].Cells[3].Value.ToString()) * 1.05;//tính thành tiền
-                        else
+                        double a = double.Parse(dtgCTHD.Rows[dong].Cells[4].Value.ToString()); // lấy giá trị thành tiền!
+                        if (tien == 1)
+                            txbTongTien.Text = (double.Parse(txbTongTien.Text) + a).ToString();// tính tổng tiền của hóa đơn
+                        if (tien == -1)
+                            txbTongTien.Text = (double.Parse(txbTongTien.Text) + a - TienTrc).ToString(); //th thay đổi mã sách hoặc số lượng nên có tiền mới
+                        tien = 0;
+                        return;
+                    }
+
+                    if (dtgCTHD.Rows[dong].Cells[0].Value != null && dtgCTHD.Rows[dong].Cells[2].Value != null) // nếu có mã sách vs số lượng rồi thì mới tính thành tiền của sách
+                    {
+                        if (dtgCTHD.Rows[dong].Cells[1].Value != null && dtgCTHD.Rows[dong].Cells[3].Value != null)
                         {
-                            MessageBox.Show("Số lượng sách sau khi bán còn ít hơn " + SoLuongTonMin + ", số lượng sách còn: " + SoSachCon + "", "Thông báo");
-                            dtgCTHD.Rows[dong].Cells[2].Value = "0";
-                            return;
-                        }
-                        for(int i = 0; i < dtgCTHD.RowCount - 1; i++)
-                        {
-                            if(MaSach == dtgCTHD.Rows[i].Cells[0].Value.ToString()&&(i!=dong))
+                            string MaSach = dtgCTHD.Rows[dong].Cells[0].Value.ToString();
+                            string SoLuong = dtgCTHD.Rows[dong].Cells[2].Value.ToString();
+                            int SoSachCon = int.Parse(busCT.LaySoLuongSach(MaSach));
+                            string SoLuongMoi = (SoSachCon - int.Parse(SoLuong)).ToString();
+                            if (int.Parse(SoLuongMoi) >= SoLuongTonMin)
                             {
-                                MessageBox.Show("Mã sách không được giống nhau, vui lòn kiểm tra lại!");
+                                double a = 0;
+                                a = double.Parse(dtgCTHD.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dtgCTHD.Rows[dong].Cells[3].Value.ToString()) * 1.05;//tính thành tiền
+                                if (dtgCTHD.Rows[dong].Cells[4].Value != null)
+                                {
+                                    TienTrc = double.Parse(dtgCTHD.Rows[dong].Cells[4].Value.ToString());
+                                    tien = -1;
+                                }
+                                else {
+                                    tien = 1;
+                                }
+                                dtgCTHD.Rows[dong].Cells[4].Value = a;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Số lượng sách sau khi bán còn ít hơn " + SoLuongTonMin + ", số lượng sách còn: " + SoSachCon + "", "Thông báo");
+                                dtgCTHD.Rows[dong].Cells[2].Value = "0";
                                 return;
                             }
+                            for (int i = 0; i < dtgCTHD.RowCount - 1; i++)
+                            {
+                                if (MaSach == dtgCTHD.Rows[i].Cells[0].Value.ToString() && (i != dong))
+                                {
+                                    MessageBox.Show("Mã sách không được giống nhau, vui lòng kiểm tra lại!");
+                                    return;
+                                }
+                            }
+                        }
+
+                    }
+                    try
+                    {
+                        if (dtgCTHD.Rows[dong].Cells[0].Value != null) //nếu có mã sách thì mới lấy ra tên sách vs số lượng
+                        {
+                            DataTable dt1 = new DataTable();
+                            dt1 = busCT.LayTTHang("WHERE MaSach = '" + int.Parse(dtgCTHD.Rows[dong].Cells[0].Value.ToString()) + " '");//lấy thông tin sách
+                            dtgCTHD.Rows[dong].Cells[1].Value = dt1.Rows[0]["TenSach"].ToString();
+                            dtgCTHD.Rows[dong].Cells[3].Value = double.Parse(dt1.Rows[0]["DonGia"].ToString());
                         }
                     }
-
-                }
-                try
-                {
-                    if (dtgCTHD.Rows[dong].Cells[0].Value != null) //nếu có mã sách thì mới lấy ra tên sách vs số lượng
+                    catch
                     {
-                        DataTable dt1 = new DataTable();
-                        dt1 = busCT.LayTTHang("WHERE MaSach = '" + int.Parse(dtgCTHD.Rows[dong].Cells[0].Value.ToString()) + " '");//lấy thông tin sách
-                        dtgCTHD.Rows[dong].Cells[1].Value = dt1.Rows[0]["TenSach"].ToString();
-                        dtgCTHD.Rows[dong].Cells[3].Value = double.Parse(dt1.Rows[0]["DonGia"].ToString());
+                        MessageBox.Show("Lấy thông tin sách không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("Lấy thông tin sách không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi!");
             }
         }
 

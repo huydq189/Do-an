@@ -139,10 +139,15 @@ namespace QLNS
         private void btnLuu_Click(object sender, EventArgs e)
         {
             ganDuLieu(kh);
+            if (!busKH.CheckKH(kh))
+            {
+                MessageBox.Show("Dữ liệu nhập vào không đúng quy định, vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (gruad == 0)
             { 
                 if (busKH.ThemKhachHang(kh)) { MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK); }
-                else { MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error); }
+                else { MessageBox.Show("Thêm thất bại thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error); }
 
             }
             else {

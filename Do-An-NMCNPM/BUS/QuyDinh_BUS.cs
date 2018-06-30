@@ -16,9 +16,9 @@ namespace BUS
         {
             return qd.showQD();
         }
-        public void ThayDoi(QuyDinh_DTO et)
+        public void ThayDoi(int B, int C, double D, int E, string F)
         {
-            qd.thaydoi(et);
+            qd.thaydoi(B, C, D, E, F);
         }
     }
 }
