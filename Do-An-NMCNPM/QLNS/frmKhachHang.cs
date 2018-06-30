@@ -93,8 +93,8 @@ namespace QLNS
             btnHuy.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            gruad = 0;
             khoaDK(true);
+            gruad = 0;
             clearKH();
             txbMaKH.Enabled = false;
             try
