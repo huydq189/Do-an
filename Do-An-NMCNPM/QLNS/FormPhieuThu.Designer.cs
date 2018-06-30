@@ -32,7 +32,6 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtMaPT = new System.Windows.Forms.TextBox();
@@ -65,11 +64,10 @@
             // 
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Controls.Add(this.txtMaKH);
-            this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.labelControl9);
-            this.panelControl3.Location = new System.Drawing.Point(2, 287);
+            this.panelControl3.Location = new System.Drawing.Point(2, 354);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(318, 260);
+            this.panelControl3.Size = new System.Drawing.Size(318, 193);
             this.panelControl3.TabIndex = 19;
             // 
             // labelControl1
@@ -84,24 +82,14 @@
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(100, 64);
+            this.txtMaKH.Location = new System.Drawing.Point(100, 95);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(155, 21);
+            this.txtMaKH.Size = new System.Drawing.Size(194, 21);
             this.txtMaKH.TabIndex = 17;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(124, 127);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(114, 47);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Thêm";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(10, 67);
+            this.labelControl9.Location = new System.Drawing.Point(12, 98);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(72, 13);
             this.labelControl9.TabIndex = 8;
@@ -118,33 +106,33 @@
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Location = new System.Drawing.Point(2, 149);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(318, 132);
+            this.panelControl1.Size = new System.Drawing.Size(318, 199);
             this.panelControl1.TabIndex = 21;
             // 
             // txtMaPT
             // 
-            this.txtMaPT.Location = new System.Drawing.Point(100, 49);
+            this.txtMaPT.Location = new System.Drawing.Point(100, 44);
             this.txtMaPT.Name = "txtMaPT";
             this.txtMaPT.Size = new System.Drawing.Size(196, 21);
             this.txtMaPT.TabIndex = 16;
             // 
             // txtSoTienThu
             // 
-            this.txtSoTienThu.Location = new System.Drawing.Point(100, 103);
+            this.txtSoTienThu.Location = new System.Drawing.Point(100, 129);
             this.txtSoTienThu.Name = "txtSoTienThu";
             this.txtSoTienThu.Size = new System.Drawing.Size(196, 21);
             this.txtSoTienThu.TabIndex = 13;
             // 
             // txtNgayThu
             // 
-            this.txtNgayThu.Location = new System.Drawing.Point(100, 76);
+            this.txtNgayThu.Location = new System.Drawing.Point(100, 86);
             this.txtNgayThu.Name = "txtNgayThu";
             this.txtNgayThu.Size = new System.Drawing.Size(196, 21);
             this.txtNgayThu.TabIndex = 12;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(10, 106);
+            this.labelControl7.Location = new System.Drawing.Point(10, 137);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(52, 13);
             this.labelControl7.TabIndex = 6;
@@ -152,7 +140,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(10, 79);
+            this.labelControl6.Location = new System.Drawing.Point(12, 94);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(44, 13);
             this.labelControl6.TabIndex = 5;
@@ -301,7 +289,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtMaKH;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.TextBox txtMaPT;

@@ -212,6 +212,28 @@ namespace QLNS
             frm1.Top = 0;
             frm1.Left = 0;
         }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "Quy Định")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+            formQuyDinh frm1 = new formQuyDinh();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
     }
     public static class TTTaiKhoan
     {
