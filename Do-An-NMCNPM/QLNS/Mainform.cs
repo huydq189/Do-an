@@ -90,7 +90,8 @@ namespace QLNS
 
         private void Mainform_Load(object sender, EventArgs e)
         {
-
+            if (TTTaiKhoan.ChucVu == "admin")
+                barButtonItem13.Enabled = true;
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -213,21 +214,35 @@ namespace QLNS
             frm1.Left = 0;
         }
 
+<<<<<<< HEAD
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+=======
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
         {
             Form frm = Mainform.ActiveForm;
             if (frm != null)
             {
                 foreach (Form f in frm.MdiChildren)
                 {
+<<<<<<< HEAD
                     if (f.Name == "Quy Định")
+=======
+                    if (f.Name == "NhanVien")
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
                     {
                         f.Activate();
                         return;
                     }
                 }
             }
+<<<<<<< HEAD
             formQuyDinh frm1 = new formQuyDinh();
+=======
+
+
+            NhanVien frm1 = new NhanVien();
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
             frm1.MdiParent = this;
             //Closeform("frmQLSV");
             frm1.Show();
