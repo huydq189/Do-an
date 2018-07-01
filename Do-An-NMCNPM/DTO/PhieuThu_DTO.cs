@@ -12,6 +12,6 @@ namespace DTO
         public int MaKH { get; set; }
         public DateTime NgayThu { get; set; }
         public int MaNV { get; set; }
-        public int SoTienThu { get; set; }
+        public double SoTienThu { get; set; }
     }
 }

@@ -214,23 +214,49 @@ namespace QLNS
             frm1.Left = 0;
         }
 
+<<<<<<< HEAD
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+=======
+<<<<<<< HEAD
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+=======
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
+>>>>>>> fbc00a0d53073b20f2558a8fbb5eaf6ba3bf0b59
         {
             Form frm = Mainform.ActiveForm;
             if (frm != null)
             {
                 foreach (Form f in frm.MdiChildren)
                 {
+<<<<<<< HEAD
+                    if (f.Name == "FormNXB")
+=======
+<<<<<<< HEAD
+                    if (f.Name == "Quy Định")
+=======
                     if (f.Name == "NhanVien")
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
+>>>>>>> fbc00a0d53073b20f2558a8fbb5eaf6ba3bf0b59
                     {
                         f.Activate();
                         return;
                     }
                 }
             }
+<<<<<<< HEAD
+
+
+            FormNXB frm1 = new FormNXB();
+=======
+<<<<<<< HEAD
+            formQuyDinh frm1 = new formQuyDinh();
+=======
 
 
             NhanVien frm1 = new NhanVien();
+>>>>>>> fd46ad6b1f70062bf8a3356be399e0d9c52dc4b9
+>>>>>>> fbc00a0d53073b20f2558a8fbb5eaf6ba3bf0b59
             frm1.MdiParent = this;
             //Closeform("frmQLSV");
             frm1.Show();

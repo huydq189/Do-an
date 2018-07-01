@@ -20,5 +20,17 @@ namespace BUS
         {
             pt.InsertPT(et);
         }
+        public string Layquydinh()
+        {
+            return pt.LayQuyDinh();
+        }
+        public string Laysotien(PhieuThu_DTO et)
+        {
+            return pt.LaySoTien(et);
+        }
+        public void UpDateSTN(double stn, int makh)
+        {
+            pt.updateSTN(stn, makh);
+        }
     }
 }

@@ -13,12 +13,12 @@ namespace DAL
         KetNoiDB da = new KetNoiDB();
         public DataTable showQD()
         {
-            string sql = "select TonToiThieuTruocNhap, SoLuongNhapItNhat, NoToiDa, TonToiThieuSauBan from QUYDINH";
+            string sql = "select * from QUYDINH";
             return da.GetTable(sql);
         }
-        public void thaydoi(QuyDinh_DTO quydinh)
+        public void thaydoi(int b, int c, double d, int e, string f)
         {
-            string sql = "update QUYDINH set TonToiThieuTruocNhap='" + quydinh.TonToiThieu + "',SoLuongNhapItNhat='" + quydinh.SoLuongItNhat + "',NoToiDa='" + quydinh.NoToiDa + "',TonToiThieuSauBan='" + quydinh.Ttts + "' where ID='" + quydinh.ID + "'";
+            string sql = "UPDATE QUYDINH SET TonToiThieuTruocNhap='" + b + "',SoLuongNhapItNhat='" + c + "',NoToiDa='" + d + "',TonToiThieuSauBan='" + e + "',QDThuTien='" + f + "'";
             da.ExcuteNoneQuery(sql);
         }
     }

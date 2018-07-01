@@ -42,7 +42,10 @@
     <Reference Include="DevExpress.Utils.v18.1" />
     <Reference Include="DevExpress.Sparkline.v18.1.Core" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+<<<<<<< HEAD
     <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+=======
+>>>>>>> 06a8fa67776983ff438442d17351df99a416cd25
     <Reference Include="DevExpress.XtraEditors.v18.1" />
     <Reference Include="DevExpress.Printing.v18.1.Core" />
     <Reference Include="System" />

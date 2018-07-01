@@ -21,6 +21,8 @@ namespace QLNS
             InitializeComponent();
         }
         PhieuThu_BUS pt = new PhieuThu_BUS();
+        string quydinh = null;
+        double tienno = 0;
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             try
@@ -30,17 +32,53 @@ namespace QLNS
                 pht.MaNV = int.Parse(txtMaNV.Text);
                 pht.MaPT = int.Parse(txtMaPT.Text);
                 pht.NgayThu = DateTime.Parse(txtNgayThu.Text);
-                pht.SoTienThu = int.Parse(txtSoTienThu.Text);
-                pt.insertPT(pht);
+                pht.SoTienThu = double.Parse(txtSoTienThu.Text);
+                tienno = double.Parse(pt.Laysotien(pht));
+
+                if (quydinh == "True")
+                {
+                    
+                        double StnM = 0;
+
+                        if (pht.SoTienThu > tienno)
+                        {
+                            MessageBox.Show("Sai quy định, số tiền thu không được lớn hơn số tiền nợ");
+
+                        }
+                        else if (pht.SoTienThu <= tienno)
+                        {
+                            StnM = tienno - pht.SoTienThu;                           
+                            pt.UpDateSTN(StnM, pht.MaKH);
+                            pt.insertPT(pht);
+                            load();
+                        }
+                  
+                   
+                }
+                else
+                {
+                        if (pht.SoTienThu > tienno)
+                        {
+                            MessageBox.Show("Sai quy định, số tiền thu không được lớn hơn số tiền nợ");
+
+                        }
+                        else if (pht.SoTienThu <= tienno)
+                        {
+                            double StnM = tienno - pht.SoTienThu;                           
+                            pt.UpDateSTN(StnM, pht.MaKH);
+                            pt.insertPT(pht);
+                            load();
+                        }
+                  
+                   
+                }
                 MessageBox.Show("Thêm thành công");
-                load();
                 reset();
 
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Thêm thất bại");
-                reset();
             }
 
         }
@@ -82,6 +120,8 @@ namespace QLNS
         private void FormPhieuThu_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            quydinh = pt.Layquydinh();
+            txtMaNV.Text = TTTaiKhoan.MaNV;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

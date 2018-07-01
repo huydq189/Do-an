@@ -21,5 +21,18 @@ namespace DAL
             string sql = "insert into PHIEUTHU values ('" + phieuthu.MaPT + "','" + phieuthu.MaKH + "','" + phieuthu.NgayThu + "','" + phieuthu.MaNV + "','" + phieuthu.SoTienThu + "')";
             da.ExcuteNoneQuery(sql);
         }
+        public string LayQuyDinh()
+        {
+            return da.GetValue("select QDThuTien from QUYDINH ");
+        }
+        public string LaySoTien(PhieuThu_DTO lt)
+        {
+            return da.GetValue("select SoTienNo from KHACHHANG where MaKH='" + lt.MaKH + "'");
+        }
+        public void updateSTN(double stn, int makh)
+        {
+            string sql = "update KHACHHANG set SoTienNo='" + stn + "' where MaKH='" + makh + "'";
+            da.ExcuteNoneQuery(sql);
+        }
     }
 }
