@@ -55,20 +55,12 @@ namespace QLNS
                   
                    
                 }
-                else
-                {
-                        if (pht.SoTienThu > tienno)
-                        {
-                            MessageBox.Show("Sai quy định, số tiền thu không được lớn hơn số tiền nợ");
+                else { 
 
-                        }
-                        else if (pht.SoTienThu <= tienno)
-                        {
                             double StnM = tienno - pht.SoTienThu;                           
                             pt.UpDateSTN(StnM, pht.MaKH);
                             pt.insertPT(pht);
                             load();
-                        }
                   
                    
                 }
