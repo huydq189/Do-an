@@ -237,10 +237,17 @@ namespace QLNS
             frm1.Top = 0;
             frm1.Left = 0;
         }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DoiMK a = new DoiMK();
+            a.ShowDialog();
+        }
     }
     public static class TTTaiKhoan
     {
         public static string MaNV = null;
         public static string ChucVu = null;
+        public static string TenTaiKhoan = null;
     }
 }

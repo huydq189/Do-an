@@ -41,5 +41,13 @@ namespace BUS
                 return true;
             else return false;
         }
+        public bool checkTenDN(Account_DTO a)
+        {
+            return Account.checkTenDN(a);
+        }
+        public bool UpdateMK(Account_DTO a,string b)
+        {
+            return Account.UpdateMK(a,b);
+        }
     }
 }
