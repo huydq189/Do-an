@@ -38,6 +38,7 @@ namespace QLNS
                 if (TTTaiKhoan.MaNV != null)
                 {
                     TTTaiKhoan.ChucVu = bus_Account.LayChucVu(dto);
+                    TTTaiKhoan.TenTaiKhoan = txbUsername.Text;
                     Mainform a = new Mainform();
                     this.Hide();
                     a.ShowDialog();

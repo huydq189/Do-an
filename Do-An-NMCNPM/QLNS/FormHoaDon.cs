@@ -105,7 +105,7 @@ namespace QLNS
                             if (int.Parse(SoLuongMoi) >= SoLuongTonMin)
                             {
                                 double a = 0;
-                                a = double.Parse(dtgCTHD.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dtgCTHD.Rows[dong].Cells[3].Value.ToString()) * 1.05;//tính thành tiền
+                                a = double.Parse(dtgCTHD.Rows[dong].Cells[2].Value.ToString()) * double.Parse(dtgCTHD.Rows[dong].Cells[3].Value.ToString());//tính thành tiền
                                 if (dtgCTHD.Rows[dong].Cells[4].Value != null)
                                 {
                                     TienTrc = double.Parse(dtgCTHD.Rows[dong].Cells[4].Value.ToString());

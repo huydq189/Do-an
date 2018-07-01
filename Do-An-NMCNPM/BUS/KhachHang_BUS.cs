@@ -48,7 +48,7 @@ namespace BUS
             }
             try { Int64.Parse(KH.CMND); }
             catch { return false; }
-            try { Int64.Parse(KH.SoTienNo); } catch { return false; }
+            try { double.Parse(KH.SoTienNo); } catch { return false; }
             if (KH.CMND.Length == 9 || KH.CMND.Length == 12)
                 return true;
             else return false;

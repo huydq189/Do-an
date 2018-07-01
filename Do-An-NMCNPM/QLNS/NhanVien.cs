@@ -36,7 +36,7 @@ namespace QLNS
             dataGridView1.DataSource = dtNV;
             bingding();
             btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
+            btnHuy.Enabled = true;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
@@ -63,6 +63,18 @@ namespace QLNS
             cbChucVu.DataBindings.Clear();
             cbChucVu.DataBindings.Add("Text", dataGridView1.DataSource, "ChucVu");
 
+        }
+        void Unbinding()
+        {
+            txbMaNV.DataBindings.Clear();
+            txbHoTen.DataBindings.Clear();
+            txbSDT.DataBindings.Clear();
+            txbCMND.DataBindings.Clear();
+            dateTimePicker1.DataBindings.Clear();
+            txbTaiKhoan.DataBindings.Clear();
+            txbMatKhau.DataBindings.Clear();
+            cbChucVu.DataBindings.Clear();
+            rTxbDiaChi.DataBindings.Clear();
         }
 
         void GanDL(NhanVien_DTO nv,Account_DTO ac)
@@ -104,6 +116,7 @@ namespace QLNS
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            Unbinding();
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnSua.Enabled = false;
@@ -144,6 +157,11 @@ namespace QLNS
                 }
                 if (Chot == 0)
                 {
+                    if (busAC.checkTenDN(AC))
+                    {
+                        MessageBox.Show("Tên đăng nhập đã có người sử dụng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     if (!busNV.ThemNhanVien(NV))
                     {
                         MessageBox.Show("Thêm nhân viên không thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -209,6 +227,12 @@ namespace QLNS
         {
             dataGridView1.DataSource = busNV.Search(txbSearch.Text);
             bingding();
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = true;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace DAL
         }
         public DataTable LayTT(string dk)
         {
-            return cn.GetTable("SELECT MaSach, TenSach, DonGia FROM SACH " + dk);
+            return cn.GetTable("SELECT MaSach, TenSach, DonGia*1.05 AS DonGia FROM SACH " + dk);
         }
         public string LaySoLuongSach(string MaSach)
         {

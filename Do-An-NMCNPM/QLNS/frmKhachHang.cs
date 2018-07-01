@@ -37,7 +37,10 @@ namespace QLNS
             khoaDK(false);
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
-            
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+
         }
         void bingding()
         {
@@ -55,6 +58,17 @@ namespace QLNS
             dateTimePicker1.DataBindings.Add("Text", dtgDSKH.DataSource, "NgaySinh");
             txbSoTIenNo.DataBindings.Clear();
             txbSoTIenNo.DataBindings.Add("Text", dtgDSKH.DataSource, "SoTienNo");
+
+        }
+        void UnBinding()
+        {
+            txbMaKH.DataBindings.Clear();
+            txbHoTen.DataBindings.Clear();
+            txbSDT.DataBindings.Clear();
+            txbEmail.DataBindings.Clear();
+            txbCMND.DataBindings.Clear();
+            dateTimePicker1.DataBindings.Clear();
+            txbSoTIenNo.DataBindings.Clear();
 
         }
         void ganDuLieu(KhachHang_DTO kh)
@@ -89,12 +103,13 @@ namespace QLNS
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            UnBinding();
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            gruad = 0;
             khoaDK(true);
+            gruad = 0;
             clearKH();
             txbMaKH.Enabled = false;
             try
@@ -120,8 +135,10 @@ namespace QLNS
             if (d == DialogResult.OK)
             {
                 ganDuLieu(kh);
+                if(kh.MaKH=="1")
                 {
                     MessageBox.Show("Không thể xóa khách hàng chưa đăng ký!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
                 }
                 if (busKH.XoaKH(kh))
                 {
@@ -146,14 +163,21 @@ namespace QLNS
             }
             if (gruad == 0)
             { 
-                if (busKH.ThemKhachHang(kh)) { MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK); }
-                else { MessageBox.Show("Thêm thất bại thành công!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error); }
+                if (busKH.ThemKhachHang(kh)) {
+                    MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+                    frmKhachHang_Load(sender, e);
+                }
+                else {
+                    MessageBox.Show("Thêm thất bại !", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
 
             }
             else {
                 if (busKH.UpdateKH(kh))
                 {
                     MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK);
+                    frmKhachHang_Load(sender, e);
                 }
                 else
                 {
@@ -172,6 +196,11 @@ namespace QLNS
         {
             dtgDSKH.DataSource = busKH.searchKH(txbSearch.Text);
             bingding();
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
         }
     }
 }
