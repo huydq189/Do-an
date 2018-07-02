@@ -23,6 +23,46 @@ namespace DAL
         {
             return  cn.GetValue("SELECT ChucVu FROM Account WHERE MaNV='" + a.MaNhanVien + "'");
         }
-
+        public bool AddAC(Account_DTO a)
+        {
+            string query = @"INSERT INTO ACCOUNT";
+            query += @" (TenTaiKhoan, MatKhau, ChucVu, MaNV)";
+            query += @" VALUES        ('" + a.TenTaiKhoan + "','" + a.MatKhau + "','" + a.ChucVu + "','" + a.MaNhanVien + "')";
+            return cn.ExcuteNoneQuery(query);
+        }
+        public bool delAC(Account_DTO a)
+        {
+            string query = @"DELETE ACCOUNT WHERE MaNV='" + a.MaNhanVien + "'";
+            return cn.ExcuteNoneQuery(query);
+        }
+        public bool Update(Account_DTO a)
+        {
+            string query = @"UPDATE ACCOUNT ";
+            query += @" SET  MatKhau ='" + a.MatKhau + "', ChucVu ='" + a.ChucVu + "'";
+            query += @" WHERE MaNV='" + a.MaNhanVien + "'";
+            return cn.ExcuteNoneQuery(query);
+        }
+        public bool checkTenDN(Account_DTO a)
+        {
+            string query = @"select * from Account where TenTaiKhoan = '" + a.TenTaiKhoan + "'";
+            if (cn.GetValue(query) == null)
+                return false;
+            else return true;
+        }
+        public bool UpdateMK(Account_DTO a,string b)
+        {
+            string query = "select MaNV from Account where TenTaiKhoan = '" + a.TenTaiKhoan + "'";
+            query += " COLLATE SQL_Latin1_General_CP1_CS_AS and MatKhau = '" + a.MatKhau + "'";
+            query += " COLLATE SQL_Latin1_General_CP1_CS_AS";
+            if (cn.GetValue(query) == null)
+                return false;
+            else
+            {
+                string query1 = @"UPDATE ACCOUNT ";
+                query1 += @" SET  MatKhau ='" + b + "'";
+                query1 += @" WHERE TenTaiKhoan='" + a.TenTaiKhoan + "'";
+                return cn.ExcuteNoneQuery(query1);
+            }
+        }
     }
 }

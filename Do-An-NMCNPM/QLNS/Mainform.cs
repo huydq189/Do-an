@@ -90,7 +90,8 @@ namespace QLNS
 
         private void Mainform_Load(object sender, EventArgs e)
         {
-
+            if (TTTaiKhoan.ChucVu == "admin")
+                barButtonItem13.Enabled = true;
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -212,10 +213,89 @@ namespace QLNS
             frm1.Top = 0;
             frm1.Left = 0;
         }
+
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "FormNXB")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+
+            FormNXB frm1 = new FormNXB();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "formQuyDinh")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+
+            formQuyDinh frm1 = new formQuyDinh ();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = Mainform.ActiveForm;
+            if (frm != null)
+            {
+                foreach (Form f in frm.MdiChildren)
+                {
+                    if (f.Name == "NhanVien")
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+            }
+
+
+            NhanVien frm1 = new NhanVien();
+            frm1.MdiParent = this;
+            //Closeform("frmQLSV");
+            frm1.Show();
+            frm1.Top = 0;
+            frm1.Left = 0;
+        }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DoiMK a = new DoiMK();
+            a.ShowDialog();
+        }
     }
     public static class TTTaiKhoan
     {
         public static string MaNV = null;
         public static string ChucVu = null;
+        public static string TenTaiKhoan = null;
     }
 }

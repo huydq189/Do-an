@@ -21,5 +21,33 @@ namespace BUS
         {
             return Account.LayChucVu(a);
         }
+        public bool AddAC(Account_DTO a)
+        {
+            return Account.AddAC(a);
+        }
+        public bool delAC(Account_DTO a)
+        {
+            return Account.delAC(a);
+        }
+        public bool Update(Account_DTO a)
+        {
+            return Account.Update(a);
+        }
+        public bool Check(Account_DTO a)
+        {
+            if (a.MaNhanVien == "" || a.MatKhau == "" || a.TenTaiKhoan == "" || a.ChucVu == "")
+                return false;
+            if (a.ChucVu == "admin" || a.ChucVu == "user")
+                return true;
+            else return false;
+        }
+        public bool checkTenDN(Account_DTO a)
+        {
+            return Account.checkTenDN(a);
+        }
+        public bool UpdateMK(Account_DTO a,string b)
+        {
+            return Account.UpdateMK(a,b);
+        }
     }
 }

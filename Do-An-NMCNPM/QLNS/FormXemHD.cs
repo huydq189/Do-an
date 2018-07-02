@@ -60,6 +60,8 @@ namespace QLNS
                 a = busHD.SearchDate(dateTimePicker2.Text, dateTimePicker1.Text);
                 dtgHoaDon.DataSource = a;
             }
+            textBox1.DataBindings.Clear();
+            textBox1.DataBindings.Add("Text", dtgHoaDon.DataSource, "MaHD");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

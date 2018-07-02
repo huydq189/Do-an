@@ -15,7 +15,7 @@ namespace DAL
         public void MoKetNoi()
         {
             if (KetNoiDB.conn == null)
-                KetNoiDB.conn = new SqlConnection(@"Data Source=HUY-PC\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
+                KetNoiDB.conn = new SqlConnection(@"Data Source=DESKTOP-OOT7VPD;Initial Catalog=QLNS;Integrated Security=True");
             if (conn.State != ConnectionState.Open)
                 KetNoiDB.conn.Open();
         }
@@ -38,7 +38,7 @@ namespace DAL
                 sqlcmd.ExecuteNonQuery();
                 DongKetNoi();
             }
-            catch (Exception ex)
+            catch
             {
                 DongKetNoi();
                 return false;

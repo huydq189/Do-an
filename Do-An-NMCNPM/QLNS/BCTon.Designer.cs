@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BCTon));
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.nam = new System.Windows.Forms.TextBox();
+            this.thang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -45,11 +45,11 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.nam);
+            this.panelControl3.Controls.Add(this.thang);
             this.panelControl3.Controls.Add(this.simpleButton3);
             this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.label1);
-            this.panelControl3.Controls.Add(this.dateTimePicker2);
-            this.panelControl3.Controls.Add(this.dateTimePicker1);
             this.panelControl3.Controls.Add(this.label2);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
@@ -57,58 +57,41 @@
             this.panelControl3.Size = new System.Drawing.Size(992, 98);
             this.panelControl3.TabIndex = 32;
             // 
-            // simpleButton3
+            // nam
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(654, 27);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(122, 48);
-            this.simpleButton3.TabIndex = 35;
-            this.simpleButton3.Text = "In báo cáo";
+            this.nam.Location = new System.Drawing.Point(361, 27);
+            this.nam.Name = "nam";
+            this.nam.Size = new System.Drawing.Size(100, 21);
+            this.nam.TabIndex = 37;
             // 
-            // simpleButton1
+            // thang
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(526, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(122, 48);
-            this.simpleButton1.TabIndex = 33;
-            this.simpleButton1.Text = "Xuất báo cáo";
+            this.thang.Location = new System.Drawing.Point(176, 27);
+            this.thang.Name = "thang";
+            this.thang.Size = new System.Drawing.Size(100, 21);
+            this.thang.TabIndex = 36;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 33);
+            this.label1.Location = new System.Drawing.Point(111, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Từ ngày";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(251, 27);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(195, 21);
-            this.dateTimePicker2.TabIndex = 29;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(251, 54);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 21);
-            this.dateTimePicker1.TabIndex = 28;
+            this.label1.Text = "THÁNG";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 60);
+            this.label2.Location = new System.Drawing.Point(326, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Đến ngày";
+            this.label2.Text = "NĂM";
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView2.Location = new System.Drawing.Point(0, 129);
@@ -125,6 +108,26 @@
             this.labelControl1.Size = new System.Drawing.Size(110, 19);
             this.labelControl1.TabIndex = 39;
             this.labelControl1.Text = "Thông tin tồn";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(654, 27);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(122, 48);
+            this.simpleButton3.TabIndex = 35;
+            this.simpleButton3.Text = "In báo cáo";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(526, 27);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(122, 48);
+            this.simpleButton1.TabIndex = 33;
+            this.simpleButton1.Text = "Xuất báo cáo";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // BCTon
             // 
@@ -152,10 +155,10 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.TextBox nam;
+        private System.Windows.Forms.TextBox thang;
     }
 }

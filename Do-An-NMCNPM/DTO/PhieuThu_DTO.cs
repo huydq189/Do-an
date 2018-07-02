@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class PhieuThu_DTO
+    public class PhieuThu_DTO
     {
         public int MaPT { get; set; }
         public int MaKH { get; set; }
-        public string NgayThu { get; set; }
+        public DateTime NgayThu { get; set; }
         public int MaNV { get; set; }
-        public int SoTienThu { get; set; }
+        public double SoTienThu { get; set; }
     }
 }

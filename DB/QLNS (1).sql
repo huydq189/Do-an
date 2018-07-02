@@ -24,75 +24,7 @@ CREATE TABLE SACH
 	FOREIGN KEY (MaNXB) REFERENCES NXB(MaNXB)
 )
 GO
-CREATE PROC SP_THEMSACH
-	@TenSach nvarchar(70),
-	@TacGia nvarchar(70),
-	@TheLoai nvarchar(100),
-	@DonGia money,
-	@SoLuong int
-	AS
-	BEGIN
-	INSERT INTO SACH(TenSach,TacGia,TenSach,DonGia,SoLuong)
-	VALUES (@TenSach,@TacGia,@TenSach,@DonGia,@SoLuong)
-	END
-GO
-CREATE PROC SP_BANSACH
-	@MaSach int,
-	@n int
-	AS
-	BEGIN
-		IF EXISTS (SELECT *FROM SACH WHERE MaSach=@MaSach and SoLuong -@n > 0)
-		BEGIN
-			UPDATE SACH SET SoLuong = SoLuong -@n WHERE MaSach =@MaSach
-		END
-		ELSE
-		BEGIN
-			RETURN
-		END
-	END
-GO
-CREATE PROC SP_XOASACH
-	@MaSach int,
-	@n int
-	AS
-	BEGIN
-		DELETE FROM SACH WHERE MaSach=@MaSach
-	END
-GO
-CREATE PROC SP_LOADSACH
-	AS
-	BEGIN
-		SELECT * FROM SACH
-	END
-GO
-CREATE PROC SP_TIMSACHMASACH
-@MaSach int
-	AS
-	BEGIN
-		SELECT *FROM SACH WHERE SACH.MaSach=@MaSach
-	END
-GO
-CREATE PROC SP_TIMSACHTENSACH
-@TenSach nvarchar(70)
-	AS
-	BEGIN
-		SELECT *FROM SACH WHERE SACH.TenSach=@TenSach
-	END
-GO
-CREATE PROC SP_TIMSACHTACGIA
-@TacGia nvarchar(70)
-	AS
-	BEGIN 
-		SELECT *FROM SACH WHERE SACH.TacGia=@TacGia
-	END
-GO
-CREATE PROC SP_TIMSACHTHELOAI
-@TheLoai nvarchar(100)
-	AS
-	BEGIN
-		SELECT * FROM SACH WHERE SACH.TheLoai=@TheLoai
-	END
-GO
+
 CREATE TABLE NHANVIEN
 (
 	MaNV INT  PRIMARY KEY,
@@ -132,7 +64,6 @@ CREATE TABLE CTPHIEUNHAP
 	MaPN INT NOT NULL,
 	MaSach INT NOT NULL,
 	SoLuongNhap INT NOT NULL,
-	DonGia MONEY NOT NULL,
 	
 	PRIMARY KEY (MaPN,MaSach),
 	FOREIGN KEY (MaPN) REFERENCES PHIEUNHAP(MaPN),
@@ -196,7 +127,8 @@ GO
 CREATE TABLE THONGTINNO
 (
 	ID INT IDENTITY  PRIMARY KEY,
-	NgayNo DATE DEFAULT GETDATE() NOT NULL,
+	Thang INT NOT NULL,
+	Nam INT NOT NULL,
 	NoDau MONEY NOT NULL,
 	NoCuoi MONEY NOT NULL,
 	PhatSinh MONEY NOT NULL,
@@ -208,7 +140,8 @@ CREATE TABLE THONGTINNO
 CREATE TABLE THONGTINTONKHO
 (
 	ID INT IDENTITY(1,1)  PRIMARY KEY,
-	ThoiGian DATE DEFAULT GETDATE() NOT NULL,
+	Thang INT NOT NULL,
+	Nam INT NOT NULL,
 	TonDau INT NOT NULL,
 	TonPhatSinh INT NOT NULL,
 	TonCuoi INT NOT NULL,
@@ -273,3 +206,76 @@ VALUES        (300,150,20,20,'TRUE')
 INSERT INTO ACCOUNT
                          (TenTaiKhoan, MatKhau, ChucVu, MaNV)
 VALUES        ('admin','admin','admin',1)
+GO
+--trigger tao bang bao cao cong no
+
+
+CREATE TRIGGER UPDATETTNO
+ON KHACHHANG 
+FOR UPDATE 
+AS
+	IF UPDATE(SoTienNo)
+	BEGIN
+		DECLARE @Thang INT
+		DECLARE @Nam INT
+		DECLARE @NoDau MONEY
+		DECLARE @NoCuoi MONEY
+		DECLARE @PhatSinh MONEY
+		DECLARE @MaKH INT
+		SELECT @Thang=MONTH(GETDATE())
+		SELECT @Nam = YEAR(GETDATE())
+		SELECT @MaKH = MaKH FROM Deleted
+		SELECT @NoCuoi = SoTienNo FROM Inserted
+		IF EXISTS(SELECT MaKH FROM THONGTINNO WHERE MaKH=@MaKH AND Thang=@Thang AND Nam=@Nam)
+			BEGIN
+				SELECT @NoDau=NoDau FROM THONGTINNO WHERE MaKH=@MaKH AND Thang=@Thang AND Nam=@Nam 
+				SELECT @PhatSinh = @NoCuoi-@NoDau
+				UPDATE  THONGTINNO SET NoDau=@NoDau, NoCuoi= @NoCuoi, PhatSinh=@PhatSinh
+				WHERE MaKH=@MaKH AND Thang=@Thang AND Nam=@Nam
+			END
+		ELSE
+			BEGIN
+			SELECT @NoDau=SoTienNo FROM Deleted
+			SELECT @PhatSinh = @NoCuoi-@NoDau
+			INSERT INTO THONGTINNO
+									 (Thang, Nam, NoDau, NoCuoi, PhatSinh, MaKH)
+			VALUES        (@Thang,@Nam,@NoDau,@NoCuoi,@PhatSinh,@MaKH)
+			END
+	END
+
+GO
+CREATE TRIGGER UPDATETTTON
+ON SACH
+FOR UPDATE 
+AS
+	IF UPDATE (SOLUONG)
+	BEGIN
+			DECLARE @Thang INT
+		DECLARE @Nam INT
+		DECLARE @TonDau INT
+		DECLARE @TonCuoi INT
+		DECLARE @TonPhatSinh INT
+		DECLARE @MaSach INT
+		SELECT @Thang=MONTH(GETDATE())
+		SELECT @Nam = YEAR(GETDATE())
+		SELECT @MaSach = MaSach FROM Deleted
+		SELECT @TonCuoi = SoLuong FROM Inserted
+		IF EXISTS(SELECT @MaSach FROM THONGTINTONKHO WHERE MaSach=@MaSach AND Thang=@Thang AND Nam=@Nam)
+			BEGIN
+				SELECT @TonDau=TonDau FROM THONGTINTONKHO WHERE MaSach=@MaSach AND Thang=@Thang AND Nam=@Nam 
+				SELECT @TonPhatSinh = @TonCuoi-@TonDau
+				UPDATE  THONGTINTONKHO SET TonDau=@TonDau, TonCuoi= @TonCuoi, TonPhatSinh=@TonPhatSinh
+				WHERE MaSach=@MaSach AND Thang=@Thang AND Nam=@Nam
+			END
+		ELSE
+			BEGIN
+			SELECT @TonDau=SoLuong FROM Deleted
+			SELECT @TonPhatSinh = @TonCuoi-@TonDau
+			INSERT INTO THONGTINTONKHO
+									 (Thang, Nam, TonDau, TonCuoi, TonPhatSinh, MaSach)
+			VALUES        (@Thang,@Nam,@TonDau,@TonCuoi,@TonPhatSinh,@MaSach)
+			END
+	END
+
+
+

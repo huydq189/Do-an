@@ -18,14 +18,14 @@ namespace BUS
             return dal.LoadDSTatCaSach();
         }       
         //Xoa sach
-        public void XoaSach(Sach_DTO et)
+        public bool XoaSach(Sach_DTO et)
         {
-            dal.Xoasach(et);
+            return dal.Xoasach(et);
         }
         //Themsach
-        public void ThemSach(Sach_DTO et)
+        public bool ThemSach(Sach_DTO et)
         {
-            dal.Themsach(et);
+            return dal.Themsach(et);
         }
         //Timtheotheloai
         public DataTable Timtheloai(string TheLoai)
@@ -47,9 +47,21 @@ namespace BUS
         {
             return dal.TimTheotensach(TenSach);
         }
-        public void SuaSach(Sach_DTO et)
+        public bool SuaSach(Sach_DTO et)
         {
-            dal.Suasach(et);
+            return dal.Suasach(et);
+        }
+        public string LayMaSach()
+        {
+            return (int.Parse(dal.LayMaMax()) + 1).ToString();
+        }
+        public string KTMaNXB(int MaNXB)
+        {
+            return dal.KiemTraMaNXB(MaNXB);
+        }
+        public DataSet GoiYTimKiem()
+        {
+            return dal.Goiytimkiem();
         }
     }
 }

@@ -37,5 +37,21 @@ namespace BUS
         {
             return khDal.searchKH(a);
         }
+        public bool CheckKH(KhachHang_DTO KH)
+        {
+            if (KH.HoTen == "" || KH.MaKH == "" || KH.NgaySinh == "" || KH.SDT == "" || KH.CMND == "" || KH.Email == ""||KH.SoTienNo=="")
+                return false;
+            try { Int64.Parse(KH.SDT); } catch { return false; }
+            if (KH.SDT.Length > 12 && KH.SDT.Length < 8)
+            {
+                return false;
+            }
+            try { Int64.Parse(KH.CMND); }
+            catch { return false; }
+            try { double.Parse(KH.SoTienNo); } catch { return false; }
+            if (KH.CMND.Length == 9 || KH.CMND.Length == 12)
+                return true;
+            else return false;
+        }
     }
 }
